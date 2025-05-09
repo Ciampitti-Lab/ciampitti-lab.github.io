@@ -2,6 +2,8 @@ import Link from "next/link";
 
 import { newsData, pubData } from "@/lib/info_helper.server";
 
+// Get first 5 publications
+const slicedPubData = pubData.slice(0, 5);
 export default function Home() {
   return (
     <>
@@ -63,10 +65,10 @@ export default function Home() {
           </div>
 
           <div className="space-y-6">
-            {pubData.map((publication) => (
+            {slicedPubData.map((publication) => (
               <div
                 key={publication.id}
-                className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+                className="bg-white p-6 rounded-lg shadow-lg border-2 border-gray-300 hover:shadow-xl hover:border-purdue-field transition-all duration-300"
               >
                 <h3 className="text-xl font-bold mb-2 font-heading">
                   {publication.title}
