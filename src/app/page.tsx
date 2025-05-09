@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 import { newsData, pubData } from "@/lib/info_helper.server";
 
@@ -6,7 +7,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purdue-black via-[#111111] to-purdue-black text-white py-16 md:py-24">
+      <section className="bg-purdue-black text-white py-16 md:py-24">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-1">
@@ -14,25 +15,42 @@ export default function Home() {
                 Ciampitti Lab
               </h1>
               <h2 className="text-3xl md:text-4xl ">
-                <span className="text-purdue-field font-bold">Digital Agriculture </span>
+                <span className="text-purdue-field font-bold">
+                  Digital Agriculture{" "}
+                </span>
                 and
-                <span className="text-purdue-field font-bold"> Farming Systems </span>
+                <span className="text-purdue-field font-bold">
+                  {" "}
+                  Farming Systems{" "}
+                </span>
                 Research
               </h2>
               <p className="pt-6 text-lg md:text-xl opacity-90">
-                Advancing agricultural science through computer vision, data analysis, crop management systems, and sustainable practices.
+                Advancing agricultural science through computer vision, data
+                analysis, crop management systems, and sustainable practices.
               </p>
               <div className="pt-4 flex flex-wrap gap-4">
-                <Link href="/research" className="btn-primary">Our Research</Link>
-                <Link href="/about" className="btn-secondary">About Us</Link>
+                <Link href="/research" className="btn-primary">
+                  Our Research
+                </Link>
+                <Link href="/about" className="btn-secondary">
+                  About Us
+                </Link>
               </div>
             </div>
-            <div className="hidden md:block relative h-80">
-              {/* Placeholder for hero image - replace with actual image */}
-              <div className="absolute inset-0 bg-purdue-gold opacity-20 rounded-lg"></div>
-              <div className="absolute inset-0 flex items-center justify-center text-purdue-gold">
-                <p className="text-xl font-bold">Lab Image Placeholder</p>
-              </div>
+            <div className="hidden md:block relative w-full h-80">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                disablePictureInPicture
+                disableRemotePlayback
+                className="absolute top-0 left-0 w-full h-full object-cover"
+              >
+                <source src="/liquid.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
@@ -47,9 +65,16 @@ export default function Home() {
 
           <div className="space-y-6">
             {pubData.map((publication) => (
-              <div key={publication.id} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-bold mb-2 font-heading">{publication.title}</h3>
-                <p className="text-purdue-secondary-gray2 mb-2 font-body">{publication.authors}</p>
+              <div
+                key={publication.id}
+                className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                <h3 className="text-xl font-bold mb-2 font-heading">
+                  {publication.title}
+                </h3>
+                <p className="text-purdue-secondary-gray2 mb-2 font-body">
+                  {publication.authors}
+                </p>
                 <div className="flex flex-wrap gap-x-6 text-sm">
                   <span className="font-body">{publication.journal}</span>
                   <span className="font-body">{publication.year}</span>
@@ -67,7 +92,9 @@ export default function Home() {
           </div>
 
           <div className="mt-8 text-center">
-            <Link href="/research#publications" className="btn-secondary">View All Publications</Link>
+            <Link href="/research#publications" className="btn-secondary">
+              View All Publications
+            </Link>
           </div>
         </div>
       </section>
@@ -80,7 +107,10 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {newsData.map((post) => (
-              <div key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
+              <div
+                key={post.id}
+                className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100"
+              >
                 <div className="h-48 bg-purdue-secondary-gray2 relative">
                   {/* Image placeholder - replace with actual images */}
                   <div className="absolute inset-0 flex items-center justify-center text-gray-500">
@@ -90,10 +120,15 @@ export default function Home() {
                 <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
                   <div className="flex-grow">
                     <span className="text-sm text-gray-500">{post.date}</span>
-                    <h3 className="text-xl font-bold mt-1 mb-2">{post.title}</h3>
+                    <h3 className="text-xl font-bold mt-1 mb-2">
+                      {post.title}
+                    </h3>
                     <p className="text-gray-600">{post.excerpt}</p>
                   </div>
-                  <Link href={`/news/${post.id}`} className="text-purdue-rush text-bold font-heading hover:underline mt-4">
+                  <Link
+                    href={`/news/${post.id}`}
+                    className="text-purdue-rush text-bold font-heading hover:underline mt-4"
+                  >
                     Read More
                   </Link>
                 </div>
@@ -101,7 +136,12 @@ export default function Home() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <Link href="/research#publications" className="btn-secondary bg-white text-purdue-black">View All Posts</Link>
+            <Link
+              href="/research#publications"
+              className="btn-secondary bg-white text-purdue-black"
+            >
+              View All Posts
+            </Link>
           </div>
         </div>
       </section>
