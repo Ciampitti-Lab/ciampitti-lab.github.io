@@ -1,15 +1,17 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-plus-jakarta);
+  --font-body: var(--font-lora);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +24,29 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  font-family: var(--font-lora), serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-plus-jakarta), sans-serif;
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-6xl mx-auto px-6 md:px-8 lg:px-10;
+  }
+
+  .btn-primary {
+    @apply bg-purdue-gold text-purdue-black px-4 py-2 rounded hover:opacity-90 transition-opacity font-heading font-medium;
+  }
+
+  .btn-secondary {
+    @apply bg-purdue-black text-white px-4 py-2 rounded hover:opacity-90 transition-opacity font-heading font-medium;
+  }
 }
