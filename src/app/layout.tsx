@@ -20,11 +20,14 @@ const lora = Lora({
 
 export const metadata: Metadata = {
   title: "Ciampitti Lab - Digital Agriculture Research",
-  description: "Research lab focused on digital agriculture with computer vision and data analysis, alongside management and crop systems.",
+  description:
+    "Research lab focused on digital agriculture with computer vision and data analysis, alongside management and crop systems.",
   icons: {
     icon: "/lab-logo.svg",
   },
-
+  verification: {
+    "google-site-verification": "ypOgEpElFzU7fdEsaDRwEZNOyfmk0KhY06Gl5FsUhbg",
+  },
 };
 
 export default function RootLayout({
