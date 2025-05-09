@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { teamData } from '@/lib/info_helper.server';
 
 export default function Students() {
@@ -16,7 +15,7 @@ export default function Students() {
 
                 {/* Team Members */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 text-purdue-black">
-                    {teamData.map((member: any) => (
+                    {teamData.map((member) => (
                         <div key={member.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition-transform hover:-translate-y-1">
                             <div className="h-64 bg-purdue-secondary-gray2 relative">
                                 {/* Image placeholder - replace with actual images */}
