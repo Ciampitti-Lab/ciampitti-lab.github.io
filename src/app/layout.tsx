@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     icon: "/lab-logo.svg",
   },
   verification: {
-    "google-site-verification": "ypOgEpElFzU7fdEsaDRwEZNOyfmk0KhY06Gl5FsUhbg",
+    google: "ypOgEpElFzU7fdEsaDRwEZNOyfmk0KhY06Gl5FsUhbg",
   },
 };
 
