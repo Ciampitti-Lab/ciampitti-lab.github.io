@@ -9,6 +9,7 @@ This repository contains the **Next.js source code** and **site content** for th
 - **Website code** (Next.js, build scripts, configuration) is released under an **OSI‑approved open‑source license** found in the root of this repository.  
 - **Images, figures, and written content** are released under **Creative Commons BY 4.0**, unless a page or file states otherwise.  
 - **Individual projects or datasets showcased on the site** retain their **own licenses**; please refer to each project’s repository for exact terms.
+- **Hero section video** was created using [liquid.paper.design](https://liquid.paper.design/). As of now, they have not published a license. If this changes or if attribution or usage restrictions are clarified, this section will be updated accordingly.
 
 ## to-Do
 ### UI
