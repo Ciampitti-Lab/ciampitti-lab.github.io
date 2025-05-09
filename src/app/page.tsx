@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from 'next/link';
 
 import { newsData, pubData } from "@/lib/info_helper.server";
@@ -47,7 +46,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-6">
-            {pubData.map((publication: any) => (
+            {pubData.map((publication) => (
               <div key={publication.id} className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                 <h3 className="text-xl font-bold mb-2 font-heading">{publication.title}</h3>
                 <p className="text-purdue-secondary-gray2 mb-2 font-body">{publication.authors}</p>
@@ -80,7 +79,7 @@ export default function Home() {
             <h2 className="text-3xl text-white font-bold">Latest News</h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {newsData.map((post: any) => (
+            {newsData.map((post) => (
               <div key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100">
                 <div className="h-48 bg-purdue-secondary-gray2 relative">
                   {/* Image placeholder - replace with actual images */}

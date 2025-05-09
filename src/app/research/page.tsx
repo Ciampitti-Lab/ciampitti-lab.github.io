@@ -67,7 +67,7 @@ export default function Research() {
                     <h2 className="text-3xl font-bold mb-10">Publications</h2>
 
                     <div className="space-y-6">
-                        {pubData.map((publication: any) => (
+                        {pubData.map((publication) => (
                             <div key={publication.id} className="bg-white p-6 rounded-lg text-purdue-black shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                                 <h3 className="text-lg font-bold mb-2">{publication.title}</h3>
                                 <p className="text-purdue-secondary-gray2 mb-2">{publication.authors}</p>
