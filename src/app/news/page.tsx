@@ -1,9 +1,8 @@
-
 import Link from 'next/link';
 import { newsData } from '@/lib/info_helper.server';
 
-export default function News() {
 
+export default function News() {
     return (
         <div className="py-16">
             <div className="container-custom">
@@ -24,7 +23,7 @@ export default function News() {
 
                 {/* Blog Posts */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-purdue-black">
-                    {newsData.map((post: any) => (
+                    {newsData.map((post) => (
                         <div key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition-all hover:shadow-lg">
                             <div className="h-48 bg-purdue-secondary-gray2 relative">
                                 {/* Image placeholder - replace with actual images */}

@@ -14,7 +14,37 @@ function readSheet<T = unknown>(sheetName: string): T[] {
   return XLSX.utils.sheet_to_json<T>(wb.Sheets[sheetName]);
 }
 
-/** ↓ Constants are evaluated once during the build / first server start */
-export const teamData = readSheet('team');
-export const newsData = readSheet('news');
-export const pubData = readSheet('publications');
+// Interface for team data
+interface TeamMember {
+  id: string | number;
+  name: string;
+  role: string;
+  pfp_file_name: string;
+  linkedin: string;
+  research_info: string;
+}
+
+// Interface for news post data
+interface NewsPost {
+  id: string | number;
+  title: string;
+  excerpt: string;
+  date: string;
+  category: string;
+  md_file_name: string;
+  img_file_name: string;
+}
+// Interface for publication data
+interface Publication {
+  id: string | number;
+  title: string;
+  authors: string;
+  journal: string;
+  year: string;
+  url: string;
+  doi: string;
+}
+/** Constants are evaluated once during the build / first server start */
+export const teamData = readSheet<TeamMember>('team');
+export const newsData = readSheet<NewsPost>('news');
+export const pubData = readSheet<Publication>('publications');
