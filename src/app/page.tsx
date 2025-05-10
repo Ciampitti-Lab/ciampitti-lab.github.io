@@ -138,7 +138,7 @@ export default function Home() {
           </div>
           <div className="mt-8 text-center">
             <Link
-              href="/research#publications"
+              href="/news"
               className="btn-secondary bg-white text-purdue-black"
             >
               View All Posts
