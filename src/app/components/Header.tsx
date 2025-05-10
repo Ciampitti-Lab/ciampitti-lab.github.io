@@ -122,10 +122,10 @@ export default function Header() {
               Research
             </Link>
             <Link
-              href="/students"
+              href="/team"
               className="block hover:text-purdue-gold transition-colors"
             >
-              Students
+              Team Members
             </Link>
             <Link
               href="/about"
