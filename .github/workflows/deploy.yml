@@ -76,6 +76,10 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
+      # disable Jekyll for GitHub Pages. trying to fix xml parsing error
+      - name: Create .nojekyll
+        run: echo "" > ./out/.nojekyll
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
