@@ -2,6 +2,12 @@ import Link from "next/link";
 
 import { newsData, pubData } from "@/lib/info_helper.server";
 
+export const metadata = {
+  title: "Ciampitti Lab - Home",
+  description:
+    "Digital agriculture research at Purdue University: computer vision, data analysis and crop systems.",
+};
+
 // Get first 5 publications
 const slicedPubData = pubData.slice(0, 5);
 export default function Home() {

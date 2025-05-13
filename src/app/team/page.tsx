@@ -1,6 +1,12 @@
 import { teamData } from "@/lib/info_helper.server";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Ciampitti Lab - Team",
+  description:
+    "Meet the researchers, students and staff behind our digital agriculture projects.",
+};
+
 export default function Students() {
   return (
     <div className="py-16">

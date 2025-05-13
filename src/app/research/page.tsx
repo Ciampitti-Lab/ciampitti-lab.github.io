@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { pubData } from "@/lib/info_helper.server";
 
+export const metadata = {
+  title: "Ciampitti Lab - Publications",
+  description:
+    "Latest research publications from the Ciampitti Lab at Purdue University.",
+};
+
 export default function Research() {
   return (
     <div className="py-16">
