@@ -22,13 +22,14 @@ export default function Students() {
               key={member.id}
               className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition-transform hover:-translate-y-1"
             >
-              <div className="h-64 bg-purdue-secondary-gray2 relative">
+              <div className="relative w-full aspect-square sm:aspect-[4/5] lg:h-64 bg-purdue-secondary-gray2">
                 <Image
-                  src={"/pfp/" + member.pfp_file_name}
+                  src={`/pfp/${member.pfp_file_name}`}
                   alt={member.name}
-                  className="w-full h-full object-cover"
-                  width={500}
-                  height={800}
+                  fill
+                  priority
+                  className="object-cover object-center"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 256px"
                 />
               </div>
               <div className="p-6 flex flex-col h-[calc(100%-16rem)]">
