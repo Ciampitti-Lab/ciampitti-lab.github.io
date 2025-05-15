@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { newsData } from "@/lib/info_helper.server";
 
 export const metadata = {
@@ -47,9 +48,14 @@ export default function News() {
             >
               <div className="h-48 bg-purdue-secondary-gray2 relative">
                 {/* Image placeholder - replace with actual images */}
-                <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                  <p>Image Placeholder</p>
-                </div>
+                <Image
+                  src={`/blog/img/${post.img_file_name}`}
+                  alt={post.title}
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-cover bg-purdue-secondary-gray1"
+                  loading="lazy"
+                />
                 <div className="absolute top-4 left-4">
                   <span className="bg-purdue-gold px-2 py-1 text-xs font-bold text-purdue-black rounded font-heading">
                     {post.category}
