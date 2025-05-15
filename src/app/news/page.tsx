@@ -47,7 +47,6 @@ export default function News() {
               className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition-all hover:shadow-lg"
             >
               <div className="h-48 bg-purdue-secondary-gray2 relative">
-                {/* Image placeholder - replace with actual images */}
                 <Image
                   src={`/blog/img/${post.img_file_name}`}
                   alt={post.title}
