@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { newsData, pubData } from "@/lib/info_helper.server";
 
@@ -119,10 +120,14 @@ export default function Home() {
                 className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100"
               >
                 <div className="h-48 bg-purdue-secondary-gray2 relative">
-                  {/* Image placeholder - replace with actual images */}
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                    <p>Image Placeholder</p>
-                  </div>
+                  <Image
+                    src={`/blog/img/${post.img_file_name}`}
+                    alt={post.title}
+                    width={500}
+                    height={500}
+                    className="w-full h-full object-cover bg-purdue-black"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="p-6 flex flex-col h-[calc(100%-12rem)]">
                   <div className="flex-grow">
