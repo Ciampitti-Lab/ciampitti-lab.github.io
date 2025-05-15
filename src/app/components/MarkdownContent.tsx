@@ -1,6 +1,8 @@
+/* src/app/components/MarkdownContent.tsx */
 "use client";
 
 import React from "react";
+// import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
@@ -16,82 +18,74 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
       rehypePlugins={[rehypeRaw, rehypeSanitize]}
       remarkPlugins={[remarkGfm]}
       components={{
-        img: ({ node, ...props }) => {
-          const src = props.src || "";
+        // img: ({ src, alt = "", ...rest }) => {
+        //   /* Bail out if src is not a string (Blob / undefined) */
+        //   if (typeof src !== "string") return null;
+        //
+        //   const imgSrc: string =
+        //     src.startsWith("http") || src.startsWith("/")
+        //       ? src
+        //       : `/blog/img/${src}`;
+        //
+        //   /* Strip width / height from the original attributes
+        //      and coerce them to numbers if present.              */
+        //   const {
+        //     width: rawW,
+        //     height: rawH,
+        //     ...imgRest
+        //   } = rest as React.ImgHTMLAttributes<HTMLImageElement>;
+        //
+        //   const width = typeof rawW === "string" ? Number(rawW) : (rawW ?? 500);
+        //   const height =
+        //     typeof rawH === "string" ? Number(rawH) : (rawH ?? 500);
+        //
+        //   return (
+        //     <div className="my-8">
+        //       <Image
+        //         src={imgSrc}
+        //         alt={alt}
+        //         width={width}
+        //         height={height}
+        //         className="rounded-md w-full max-w-full h-auto"
+        //         loading="lazy"
+        //         {...imgRest} /* any remaining safe props */
+        //       />
+        //       {alt && (
+        //         <p className="text-sm text-gray-500 mt-2 text-center italic">
+        //           {alt}
+        //         </p>
+        //       )}
+        //     </div>
+        //   );
+        // },
 
-          // Check if the image path is relative and needs to be prefixed
-          const imgSrc =
-            src.startsWith("http") || src.startsWith("/")
-              ? src
-              : `/blog/img/${src}`;
-
-          return (
-            <div className="my-8">
-              <img
-                src={imgSrc}
-                alt={props.alt || ""}
-                className="rounded-md w-full max-w-full h-auto"
-                loading="lazy"
-              />
-              {props.alt && (
-                <p className="text-sm text-gray-500 mt-2 text-center italic">
-                  {props.alt}
-                </p>
-              )}
-            </div>
-          );
-        },
-        // Style other elements as needed
-        h2: ({ node, ...props }) => (
-          <h2 className="text-2xl font-bold mt-8 mb-4" {...props} />
-        ),
-        h3: ({ node, ...props }) => (
-          <h3 className="text-xl font-bold mt-6 mb-3" {...props} />
-        ),
-        p: ({ node, ...props }) => (
-          <p className="my-4 text-purdue-secondary-gray2" {...props} />
-        ),
-        a: ({ node, ...props }) => (
-          <a className="text-purdue-rush hover:underline" {...props} />
-        ),
-        ul: ({ node, ...props }) => (
-          <ul className="list-disc pl-6 my-4" {...props} />
-        ),
-        ol: ({ node, ...props }) => (
-          <ol className="list-decimal pl-6 my-4" {...props} />
-        ),
-        li: ({ node, ...props }) => <li className="my-2" {...props} />,
-        blockquote: ({ node, ...props }) => (
+        /* ─── OTHER ELEMENTS ─── */
+        h2: (p) => <h2 className="text-2xl font-bold mt-8 mb-4" {...p} />,
+        h3: (p) => <h3 className="text-xl font-bold mt-6 mb-3" {...p} />,
+        p: (p) => <p className="my-4 text-purdue-secondary-gray2" {...p} />,
+        a: (p) => <a className="text-purdue-rush hover:underline" {...p} />,
+        ul: (p) => <ul className="list-disc pl-6 my-4" {...p} />,
+        ol: (p) => <ol className="list-decimal pl-6 my-4" {...p} />,
+        li: (p) => <li className="my-2" {...p} />,
+        blockquote: (p) => (
           <blockquote
             className="border-l-4 border-purdue-gold pl-4 italic my-6"
-            {...props}
+            {...p}
           />
         ),
-        code: ({ node, inline, ...props }) =>
-          inline ? (
-            <code
-              className="bg-gray-100 px-1 py-0.5 rounded text-sm"
-              {...props}
-            />
-          ) : (
-            <pre className="bg-gray-100 p-4 rounded-md overflow-x-auto my-6">
-              <code {...props} />
-            </pre>
-          ),
-        table: ({ node, ...props }) => (
+        code: (p) => (
+          <pre className="bg-gray-100 p-4 rounded-md overflow-x-auto my-6">
+            <code {...p} />
+          </pre>
+        ),
+        table: (p) => (
           <div className="overflow-x-auto my-6">
-            <table className="min-w-full border-collapse" {...props} />
+            <table className="min-w-full border-collapse" {...p} />
           </div>
         ),
-        thead: ({ node, ...props }) => (
-          <thead className="bg-gray-50 text-left" {...props} />
-        ),
-        th: ({ node, ...props }) => (
-          <th className="px-4 py-2 border border-gray-300" {...props} />
-        ),
-        td: ({ node, ...props }) => (
-          <td className="px-4 py-2 border border-gray-300" {...props} />
-        ),
+        thead: (p) => <thead className="bg-gray-50 text-left" {...p} />,
+        th: (p) => <th className="px-4 py-2 border border-gray-300" {...p} />,
+        td: (p) => <td className="px-4 py-2 border border-gray-300" {...p} />,
       }}
     >
       {content}

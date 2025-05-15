@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { newsData } from "@/lib/info_helper.server";
 import { MarkdownContent } from "@/app/components/MarkdownContent";
@@ -76,10 +77,12 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
         {post.img_file_name && (
           <div className="mb-8">
-            <img
+            <Image
               src={`/blog/img/${post.img_file_name}`}
               alt={post.title}
               className="w-full h-auto rounded-lg shadow-md"
+              width={500}
+              height={500}
             />
           </div>
         )}
