@@ -66,27 +66,32 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
   return (
     <div className="py-16">
       <div className="container-custom">
-        <div className="mb-6">
-          <span className="bg-purdue-gold px-3 py-1 text-sm font-bold text-purdue-black rounded font-heading">
-            {post.category}
-          </span>
-          <p className="text-gray-500 mt-4">{post.date}</p>
+        <div className="flex gap-8 mb-8">
+          <div className="flex-1">
+            <div className="mb-4">
+              <span className="bg-purdue-gold px-3 py-1 text-sm lg:text-base font-bold text-purdue-black rounded font-heading">
+                {post.category}
+              </span>
+              <p className="text-gray-500 mt-4 text-base lg:text-lg">{post.date}</p>
+            </div>
+
+            <h1 className="text-4xl lg:text-6xl font-bold">{post.title}</h1>
+          </div>
+
+          {post.img_file_name && (
+            <div className="w-1/2 flex-shrink-0">
+              <Image
+                src={`/blog/img/${post.img_file_name}`}
+                alt={post.title}
+                className="w-full h-auto rounded-lg shadow-md"
+                width={500}
+                height={500}
+              />
+            </div>
+          )}
         </div>
 
-        <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
-
-        {post.img_file_name && (
-          <div className="mb-8">
-            <Image
-              src={`/blog/img/${post.img_file_name}`}
-              alt={post.title}
-              className="w-full h-auto rounded-lg shadow-md"
-              width={500}
-              height={500}
-            />
-          </div>
-        )}
-
+        <hr className="border-t border-gray-200" />
         <div className="prose prose-lg max-w-none">
           <MarkdownContent content={mdContent} />
         </div>
