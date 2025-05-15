@@ -53,7 +53,7 @@ export default function News() {
                   alt={post.title}
                   width={500}
                   height={500}
-                  className="w-full h-full object-cover bg-purdue-secondary-gray1"
+                  className="w-full h-full object-cover bg-purdue-black"
                   loading="lazy"
                 />
                 <div className="absolute top-4 left-4">
