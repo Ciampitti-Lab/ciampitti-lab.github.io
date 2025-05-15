@@ -12,12 +12,13 @@ export async function generateStaticParams() {
 }
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps) {
+export async function generateMetadata(props: BlogPostPageProps) {
+  const params = await props.params;
   const slug = params.slug;
   const post = newsData.find((post) => post.id.toString() === slug);
 
@@ -34,7 +35,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   };
 }
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function BlogPostPage(props: BlogPostPageProps) {
+  const params = await props.params;
   const slug = params.slug;
   const post = newsData.find((post) => post.id.toString() === slug);
 
