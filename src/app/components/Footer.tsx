@@ -44,6 +44,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/team"
+                  className="hover:text-purdue-gold transition-colors"
+                >
+                  Team Members
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/news"
                   className="hover:text-purdue-gold transition-colors"
                 >
@@ -136,7 +144,8 @@ export default function Footer() {
           </p>
           <div className="flex justify-center items-center space-x-2 mt-2">
             <p>Website Developed by Pedro Cisdeli.</p>
-            <a href="https://github.com/cisdeli"
+            <a
+              href="https://github.com/cisdeli"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
