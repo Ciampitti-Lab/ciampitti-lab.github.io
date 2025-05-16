@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { newsData } from "@/lib/info_helper.server";
 import { MarkdownContent } from "@/app/components/MarkdownContent";
@@ -66,6 +67,12 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
   return (
     <div className="py-16">
       <div className="container-custom">
+        <Link href="/news" className="inline-flex items-center text-purdue-gold hover:text-purdue-field mb-6">
+          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Return
+        </Link>
         <div className="mb-4">
           <span className="bg-purdue-gold px-3 py-1 text-sm lg:text-base font-bold text-purdue-black rounded font-heading">
             {post.category}
@@ -74,7 +81,6 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
         </div>
         <div className="flex gap-8 mb-8">
           <div className="flex-1">
-
             <h1 className="text-2xl lg:text-6xl font-bold">{post.title}</h1>
           </div>
 
