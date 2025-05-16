@@ -21,24 +21,25 @@ export default function News() {
         </div>
 
         {/* Categories */}
-        <div className="flex flex-wrap gap-2 mb-8 font-heading text-purdue-secondary-gray2">
-          <button className="px-4 py-2 rounded-full bg-purdue-black text-white text-sm font-medium">
-            All
-          </button>
-          <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-gray-200">
-            Research
-          </button>
-          <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-gray-200">
-            Data Analysis
-          </button>
-          <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-gray-200">
-            Computer Vision
-          </button>
-          <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-gray-200">
-            Events
-          </button>
-        </div>
-
+        {
+          // <div className="flex flex-wrap gap-2 mb-8 font-heading text-purdue-secondary-gray2">
+          //   <button className="px-4 py-2 rounded-full bg-purdue-black text-white text-sm font-medium">
+          //     All
+          //   </button>
+          //   <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-gray-200">
+          //     Research
+          //   </button>
+          //   <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-gray-200">
+          //     Data Analysis
+          //   </button>
+          //   <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-gray-200">
+          //     Computer Vision
+          //   </button>
+          //   <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-gray-200">
+          //     Events
+          //   </button>
+          // </div>
+        }
         {/* Blog Posts */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-purdue-black">
           {newsData.map((post) => (
