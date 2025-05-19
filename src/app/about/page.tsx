@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import FacilityCarousel from "@/app/components/FacilityCarousel";
 
 export const metadata = {
   title: "Ciampitti Lab - About",
@@ -23,7 +25,7 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div>
             <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-            <p className="text-purdue-secondary-gray4 mb-4">
+            <p className="text-purdue-secondary-gray4 text-md mb-4">
               At the Ciampitti Lab, our mission is to develop innovative digital
               agriculture solutions that enable more efficient, sustainable, and
               productive farming practices. We leverage cutting-edge
@@ -31,7 +33,7 @@ export default function About() {
               analytics, while maintaining a strong foundation in traditional
               crop science and management systems.
             </p>
-            <p className="text-purdue-secondary-gray4 mb-4">
+            <p className="text-purdue-secondary-gray4 text-md mb-4">
               Our interdisciplinary approach brings together experts from
               agronomy, computer science, engineering, and data science to
               address complex challenges in modern agriculture. Through
@@ -39,15 +41,20 @@ export default function About() {
               aim to bridge the gap between academic innovation and practical
               applications in the field.
             </p>
-            <p className="text-purdue-secondary-gray4">
+            <p className="text-purdue-secondary-gray4 text-md">
               We are committed to training the next generation of agricultural
               scientists and technologists through our educational programs and
               research opportunities for students at all levels.
             </p>
           </div>
-          <div className="bg-purdue-secondary-gray2 rounded-lg h-80 flex items-center justify-center">
-            {/* Placeholder for lab image - replace with actual image */}
-            <p className="text-gray-500 font-medium">Lab Mission Image</p>
+          <div className="bg-purdue-black rounded-lg h-full flex items-center justify-center border-4 border-double border-purdue-gold">
+            <Image
+              src="/about/jacket.jpg"
+              alt="Lab Mission"
+              width={500}
+              height={500}
+              className="w-full h-full object-cover rounded-lg opacity-70"
+            />
           </div>
         </div>
 
@@ -119,7 +126,7 @@ export default function About() {
                     <div className="h-6 w-6 rounded-full bg-purdue-gold flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-white"
+                        className="h-4 w-4 text-black"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -133,34 +140,15 @@ export default function About() {
                       </svg>
                     </div>
                     <p>
-                      Computational lab with high-performance computing
-                      resources for data processing and machine learning
+                      Field research hub with four core facilities: dry lab, wet
+                      lab, hybrid lab, and field barn.
                     </p>
                   </li>
                   <li className="flex items-start">
                     <div className="h-6 w-6 rounded-full bg-purdue-gold flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-white"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <p>Field research plots with automated sensing equipment</p>
-                  </li>
-                  <li className="flex items-start">
-                    <div className="h-6 w-6 rounded-full bg-purdue-gold flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-white"
+                        className="h-4 w-4 text-black"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -175,14 +163,14 @@ export default function About() {
                     </div>
                     <p>
                       Advanced imaging systems including RGB, multispectral, and
-                      thermal cameras
+                      depth cameras.
                     </p>
                   </li>
                   <li className="flex items-start">
                     <div className="h-6 w-6 rounded-full bg-purdue-gold flex items-center justify-center mr-3 mt-1 flex-shrink-0">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4 text-white"
+                        className="h-4 w-4 text-black"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -196,16 +184,35 @@ export default function About() {
                       </svg>
                     </div>
                     <p>
-                      Greenhouse facilities for controlled environment studies
+                      Computational resources for training machine learning
+                      models, data processing and analysis.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="h-6 w-6 rounded-full bg-purdue-gold flex items-center justify-center mr-3 mt-1 flex-shrink-0">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 text-black"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    </div>
+                    <p>
+                      Greenhouse facilities for controlled environment studies.
                     </p>
                   </li>
                 </ul>
               </div>
-              <div className="bg-white rounded-lg h-64 flex items-center justify-center">
-                {/* Placeholder for lab facilities image - replace with actual image */}
-                <p className="text-gray-500 font-medium">
-                  Lab Facilities Image
-                </p>
+              <div className="rounded-lg">
+                <FacilityCarousel />
               </div>
             </div>
           </div>
