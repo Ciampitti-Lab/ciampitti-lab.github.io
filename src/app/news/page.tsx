@@ -15,7 +15,7 @@ export default function News() {
         {/* Page Header */}
         <div className="mb-12">
           <h1 className="text-4xl font-bold mb-4">News & Blog</h1>
-          <p className="text-lg text-purdue-secondary-gray2">
+          <p className="text-lg text-purdue-secondary-gray4">
             Latest updates, research findings, and events from the Ciampitti Lab
           </p>
         </div>

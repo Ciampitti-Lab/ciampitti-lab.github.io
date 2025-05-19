@@ -14,7 +14,7 @@ export default function Research() {
         {/* Page Header */}
         <div className="mb-16 text-center">
           <h1 className="text-4xl font-bold mb-4">Our Research</h1>
-          <p className="text-lg text-purdue-secondary-gray2 max-w-3xl mx-auto">
+          <p className="text-lg text-purdue-secondary-gray4 max-w-3xl mx-auto">
             Exploring the intersection of digital technology and agricultural
             science to develop innovative solutions for sustainable crop
             production.

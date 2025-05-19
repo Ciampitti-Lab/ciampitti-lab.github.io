@@ -14,7 +14,7 @@ export default function Students() {
         {/* Page Header */}
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold mb-4">Our Team</h1>
-          <p className="text-lg text-purdue-secondary-gray2 max-w-3xl mx-auto">
+          <p className="text-lg text-purdue-secondary-gray4 max-w-3xl mx-auto">
             Meet the researchers, scientists, and students working together to
             advance digital agriculture and crop management systems at the
             Ciampitti Lab.

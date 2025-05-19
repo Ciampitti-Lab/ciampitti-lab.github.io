@@ -12,7 +12,7 @@ export default function About() {
         {/* Page Header */}
         <div className="mb-16 text-center">
           <h1 className="text-4xl font-bold mb-4">About Our Lab</h1>
-          <p className="text-lg text-purdue-secondary-gray2 max-w-3xl mx-auto">
+          <p className="text-lg text-purdue-secondary-gray3 max-w-3xl mx-auto">
             The Ciampitti Lab focuses on digital agriculture research, combining
             computer vision, data analysis, and traditional crop management
             systems to advance sustainable agriculture.
@@ -23,7 +23,7 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
           <div>
             <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-            <p className="text-purdue-secondary-gray2 mb-4">
+            <p className="text-purdue-secondary-gray4 mb-4">
               At the Ciampitti Lab, our mission is to develop innovative digital
               agriculture solutions that enable more efficient, sustainable, and
               productive farming practices. We leverage cutting-edge
@@ -31,7 +31,7 @@ export default function About() {
               analytics, while maintaining a strong foundation in traditional
               crop science and management systems.
             </p>
-            <p className="text-purdue-secondary-gray2 mb-4">
+            <p className="text-purdue-secondary-gray4 mb-4">
               Our interdisciplinary approach brings together experts from
               agronomy, computer science, engineering, and data science to
               address complex challenges in modern agriculture. Through
@@ -39,7 +39,7 @@ export default function About() {
               aim to bridge the gap between academic innovation and practical
               applications in the field.
             </p>
-            <p className="text-purdue-secondary-gray2">
+            <p className="text-purdue-secondary-gray4">
               We are committed to training the next generation of agricultural
               scientists and technologists through our educational programs and
               research opportunities for students at all levels.
@@ -110,7 +110,7 @@ export default function About() {
           <h2 className="text-3xl font-bold mb-10 text-center">
             Our Facilities
           </h2>
-          <div className="bg-purdue-secondary-gray3 rounded-lg p-8">
+          <div className="bg-purdue-black rounded-lg p-8">
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-2xl font-bold mb-4">Research Facilities</h3>
@@ -216,7 +216,7 @@ export default function About() {
           <h2 className="text-3xl font-bold mb-6 text-center">
             Our Collaborators
           </h2>
-          <p className="text-center text-purdue-secondary-gray2 max-w-3xl mx-auto mb-10">
+          <p className="text-center text-white max-w-3xl mx-auto mb-10">
             We collaborate with academic institutions, industry partners, and
             government agencies to drive innovation and translate research into
             practical applications.
