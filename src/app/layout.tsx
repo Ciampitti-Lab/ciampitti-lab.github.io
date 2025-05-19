@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Plus_Jakarta_Sans, Lora } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
@@ -19,24 +20,70 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Ciampitti Lab - Digital Agriculture Research",
+  metadataBase: new URL("https://ciampitti-lab.github.io/"),
+  title: "Ciampitti Lab – Digital Agriculture Research",
   description:
-    "Research lab focused on digital agriculture with computer vision and data analysis, alongside management and crop systems.",
-  icons: {
-    icon: "/lab-logo.svg",
+    "Advancing agricultural science through computer vision, data analysis and crop-systems research.",
+  icons: { icon: "/lab-logo.svg" },
+
+  /* --- Open Graph --- */
+  openGraph: {
+    type: "website",
+    url: "https://ciampitti-lab.github.io/",
+    siteName: "Ciampitti Lab",
+    title: "Ciampitti Lab – Digital Agriculture & Farming Systems Research",
+    description:
+      "Advancing agricultural science through computer vision, data analysis and crop-systems research.",
+    images: [
+      {
+        url: "/lab-logo.png",
+        width: 512,
+        height: 512,
+        alt: "Ciampitti Lab logo",
+      },
+    ],
   },
-  verification: {
-    google: "ypOgEpElFzU7fdEsaDRwEZNOyfmk0KhY06Gl5FsUhbg",
+
+  /* --- Twitter Card --- */
+  twitter: {
+    card: "summary_large_image",
+    site: "@CiampittiLab",
+    creator: "@pcisdeli",
+    images: ["/lab-logo.png"],
   },
+
+  /* --- Robots --- */
+  robots: { "max-image-preview": "large" },
+
+  verification: { google: "ypOgEpElFzU7fdEsaDRwEZNOyfmk0KhY06Gl5FsUhbg" },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
+      <head>
+        {/* Structured-data for Google’s Knowledge Graph */}
+        <Script
+          id="org-ld-json"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Ciampitti Lab",
+              url: "https://ciampitti-lab.github.io/",
+              logo: "https://ciampitti-lab.github.io/lab-logo.svg",
+              image: "https://ciampitti-lab.github.io/lab-logo.svg",
+            }),
+          }}
+        />
+      </head>
+
       <body
         className={`${plusJakartaSans.variable} ${lora.variable} antialiased min-h-screen flex flex-col`}
       >
