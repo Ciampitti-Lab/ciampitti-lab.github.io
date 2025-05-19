@@ -83,7 +83,7 @@ export default function Research() {
             industry, and government agencies.
           </p>
           <Link href="/team" className="btn-primary">
-            Contact any of our team members via LinkedIn
+            Contact us via LinkedIn
           </Link>
         </div>
         {/* Publications */}

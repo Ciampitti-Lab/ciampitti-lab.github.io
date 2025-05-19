@@ -255,7 +255,7 @@ export default function About() {
             we can work together.
           </p>
           <Link href="/team" className="btn-primary">
-            Contact any of our team members via LinkedIn
+            Contact us via LinkedIn
           </Link>
         </div>
       </div>
