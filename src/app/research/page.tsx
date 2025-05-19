@@ -82,8 +82,8 @@ export default function Research() {
             about our work? We welcome partnerships with academic institutions,
             industry, and government agencies.
           </p>
-          <Link href="/contact" className="btn-primary">
-            Contact Us
+          <Link href="/team" className="btn-primary">
+            Contact any of our team members via LinkedIn
           </Link>
         </div>
         {/* Publications */}

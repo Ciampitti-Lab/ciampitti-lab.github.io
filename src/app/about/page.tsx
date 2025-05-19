@@ -12,7 +12,7 @@ export default function About() {
         {/* Page Header */}
         <div className="mb-16 text-center">
           <h1 className="text-4xl font-bold mb-4">About Our Lab</h1>
-          <p className="text-lg text-purdue-secondary-gray3 max-w-3xl mx-auto">
+          <p className="text-lg text-purdue-secondary-gray4 max-w-3xl mx-auto">
             The Ciampitti Lab focuses on digital agriculture research, combining
             computer vision, data analysis, and traditional crop management
             systems to advance sustainable agriculture.
@@ -212,28 +212,30 @@ export default function About() {
         </div>
 
         {/* Collaborations */}
-        <div className="mb-24">
-          <h2 className="text-3xl font-bold mb-6 text-center">
-            Our Collaborators
-          </h2>
-          <p className="text-center text-white max-w-3xl mx-auto mb-10">
-            We collaborate with academic institutions, industry partners, and
-            government agencies to drive innovation and translate research into
-            practical applications.
-          </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {/* Placeholder logos - replace with actual collaborator logos */}
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div
-                key={i}
-                className="h-24 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center"
-              >
-                <p className="text-gray-400">Partner {i}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        {
+          // <div className="mb-24">
+          //   <h2 className="text-3xl font-bold mb-6 text-center">
+          //     Our Collaborators
+          //   </h2>
+          //   <p className="text-center text-white max-w-3xl mx-auto mb-10">
+          //     We collaborate with academic institutions, industry partners, and
+          //     government agencies to drive innovation and translate research
+          //     into practical applications.
+          //   </p>
+          //
+          //   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          //     {/* Placeholder logos - replace with actual collaborator logos */}
+          //     {[1, 2, 3, 4, 5].map((i) => (
+          //       <div
+          //         key={i}
+          //         className="h-24 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center"
+          //       >
+          //         <p className="text-gray-400">Partner {i}</p>
+          //       </div>
+          //     ))}
+          //   </div>
+          // </div>
+        }
 
         {/* Contact CTA */}
         <div className="bg-purdue-black text-white p-8 md:p-12 rounded-xl text-center">
@@ -245,8 +247,8 @@ export default function About() {
             partnerships, and student opportunities. Get in touch to discuss how
             we can work together.
           </p>
-          <Link href="/contact" className="btn-primary">
-            Contact Us
+          <Link href="/team" className="btn-primary">
+            Contact any of our team members via LinkedIn
           </Link>
         </div>
       </div>
