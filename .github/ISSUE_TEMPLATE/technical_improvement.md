@@ -6,34 +6,38 @@ labels: "technical"
 assignees: ""
 ---
 
-**🔧 Area of improvement**
+## 🔧 Area of improvement
 
 - [ ] Performance optimization
 - [ ] SEO improvements
+- [ ] User experience
 - [ ] Accessibility
 - [ ] Code refactoring
 - [ ] Security enhancement
 - [ ] Build process/CI/CD
 - [ ] Other: ****\_\_\_****
 
-**📊 Current situation**
+## 📊 Current situation
 Describe the current state and why it needs improvement.
 
-**💡 Proposed solution**
+## 💡 Proposed solution
 Describe your proposed technical solution.
 
-**🎯 Benefits**
+## 🎯 Benefits
 
 - Performance impact (if any)
 - User experience improvements
 - Maintainability improvements
 - Other benefits
 
-**⚖️ Implementation complexity**
+## ⚖️ Implementation complexity
 
 - [ ] Low (simple change)
 - [ ] Medium (requires some planning)
 - [ ] High (significant refactor/new feature)
 
-**📝 Additional context**
+## ⚙️ Technical requirements
+List any specific technical requirements, dependencies, or tools needed for implementation.
+
+## 📝 Additional context
 Links to relevant documentation, examples, or other context.

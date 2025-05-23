@@ -6,29 +6,33 @@ labels: "content"
 assignees: ""
 ---
 
-**📄 Type of content update**
+## 📄 Type of content update
 
 - [ ] News/Blog post
 - [ ] Research project information
 - [ ] Team member information
 - [ ] Publication details
 - [ ] General page content
-- [ ] Other: ****\_\_\_****
+- [ ] Other: \***\*\_\_\_\*\***
 
-**📍 Page/Section affected**
+## 📍 Page/Section affected
+
 Specify which page or section needs to be updated.
 
-**📋 Current content**
+## 📋 Current content
+
 Describe or paste the current content that needs to be changed.
 
-**✏️ Requested changes**
+## ✏️ Requested changes
+
 Describe what changes need to be made or paste the new content.
 
-**⚡ Urgency**
+## ⚡ Urgency
 
 - [ ] High (time-sensitive)
 - [ ] Medium (within a week)
 - [ ] Low (when convenient)
 
-**📝 Additional notes**
+## 📝 Additional notes
+
 Any other relevant information.
