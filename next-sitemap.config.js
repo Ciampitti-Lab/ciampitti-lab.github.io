@@ -4,4 +4,5 @@ module.exports = {
   generateRobotsTxt: true, // creates robots.txt with a Sitemap: line
   generateIndexSitemap: false, // creates a separate index sitemap file
   trailingSlash: false,
+  outDir: "./out",
 };
