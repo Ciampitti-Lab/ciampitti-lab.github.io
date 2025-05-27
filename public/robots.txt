@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://ciampitti-lab.github.io
-
-# Sitemaps
-Sitemap: https://ciampitti-lab.github.io/sitemap.xml
