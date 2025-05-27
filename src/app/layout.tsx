@@ -24,7 +24,6 @@ export const metadata: Metadata = {
   title: "Ciampitti Lab – Digital Agriculture Research",
   description:
     "Advancing agricultural science through computer vision, data analysis and crop-systems research.",
-  icons: { icon: "/lab-logo.svg" },
 
   /* --- Open Graph --- */
   openGraph: {
@@ -77,8 +76,8 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Ciampitti Lab",
               url: "https://ciampitti-lab.github.io/",
-              logo: "https://ciampitti-lab.github.io/lab-logo.svg",
-              image: "https://ciampitti-lab.github.io/lab-logo.svg",
+              logo: "https://ciampitti-lab.github.io/icon.png",
+              image: "https://ciampitti-lab.github.io/icon.png",
             }),
           }}
         />
