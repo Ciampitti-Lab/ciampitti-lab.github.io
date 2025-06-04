@@ -245,12 +245,12 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
               return <>{children}</>;
             }
 
-            return <div className="my-4 text-purdue-secondary-gray3" {...props}>{children}</div>;
+            return <div className="my-4 text-[#e0e0e0]" {...props}>{children}</div>;
           },
           a: (p) => <a className="text-purdue-rush hover:underline" {...p} />,
-          ul: (p) => <ul className="list-disc pl-6 my-4 text-purdue-secondary-gray3" {...p} />,
-          ol: (p) => <ol className="list-decimal pl-6 my-4 text-purdue-secondary-gray3" {...p} />,
-          li: (p) => <li className="my-2 text-purdue-secondary-gray3" {...p} />,
+          ul: (p) => <ul className="list-disc pl-6 my-4 text-[#e0e0e0]" {...p} />,
+          ol: (p) => <ol className="list-decimal pl-6 my-4 text-[#e0e0e0]" {...p} />,
+          li: (p) => <li className="my-2 text-[#e0e0e0]" {...p} />,
           blockquote: (p) => (
             <blockquote
               className="border-l-4 border-purdue-gold pl-4 italic my-6"
