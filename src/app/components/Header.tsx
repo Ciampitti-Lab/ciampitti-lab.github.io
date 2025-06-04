@@ -42,6 +42,12 @@ export default function Header() {
               Research
             </Link>
             <Link
+              href="/projects"
+              className="hover:text-purdue-gold transition-colors"
+            >
+              Projects
+            </Link>
+            <Link
               href="/team"
               className="hover:text-purdue-gold transition-colors"
             >
@@ -110,16 +116,22 @@ export default function Header() {
               Home
             </Link>
             <Link
-              href="/news"
-              className="block hover:text-purdue-gold transition-colors"
-            >
-              News & Blog
-            </Link>
-            <Link
               href="/research"
               className="block hover:text-purdue-gold transition-colors"
             >
               Research
+            </Link>
+            <Link
+              href="/projects"
+              className="block hover:text-purdue-gold transition-colors"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/news"
+              className="block hover:text-purdue-gold transition-colors"
+            >
+              News & Blog
             </Link>
             <Link
               href="/team"

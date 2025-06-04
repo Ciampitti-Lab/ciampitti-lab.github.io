@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Plus_Jakarta_Sans, Lora } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import ConditionalLayout from "./components/ConditionalLayout";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -65,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Structured-data for Google’s Knowledge Graph */}
+        {/* Structured-data for Google's Knowledge Graph */}
         <Script
           id="org-ld-json"
           type="application/ld+json"
@@ -86,9 +85,7 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} ${lora.variable} antialiased min-h-screen flex flex-col`}
       >
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
+        <ConditionalLayout>{children}</ConditionalLayout>
       </body>
     </html>
   );
