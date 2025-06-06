@@ -4,13 +4,13 @@ import { Plus_Jakarta_Sans, Lora } from "next/font/google";
 import "./globals.css";
 import ConditionalLayout from "./components/ConditionalLayout";
 
+/* ---------- local fonts ---------- */
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta",
   weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
-
 const lora = Lora({
   subsets: ["latin"],
   variable: "--font-lora",
@@ -18,13 +18,23 @@ const lora = Lora({
   display: "swap",
 });
 
+/* ---------- site-wide <head> metadata ---------- */
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ciampitti-lab.github.io/"),
+  metadataBase: new URL("https://ciampitti-lab.github.io"),
   title: "Ciampitti Lab – Digital Agriculture Research",
   description:
     "Advancing agricultural science through computer vision, data analysis and crop-systems research.",
 
-  /* --- Open Graph --- */
+  /* ---- FAVICON: stable URL, no hash ---- */
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png", sizes: "512x512" },
+      // optional legacy fallback for old browsers
+      { url: "/favicon.ico" },
+    ],
+  },
+
+  /* ---- Open Graph / Twitter ---- */
   openGraph: {
     type: "website",
     url: "https://ciampitti-lab.github.io/",
@@ -41,8 +51,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-
-  /* --- Twitter Card --- */
   twitter: {
     card: "summary_large_image",
     site: "@CiampittiLab",
@@ -50,9 +58,7 @@ export const metadata: Metadata = {
     images: ["/lab-logo.png"],
   },
 
-  /* --- Robots --- */
   robots: { "max-image-preview": "large" },
-
   verification: { google: "ypOgEpElFzU7fdEsaDRwEZNOyfmk0KhY06Gl5FsUhbg" },
 };
 
@@ -64,19 +70,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Structured-data for Google's Knowledge Graph */}
+        {/* ---- Structured-data ---- */}
         <Script
-          id="org-ld-json"
+          id="website-ld-json"
           type="application/ld+json"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Ciampitti Lab",
+              "@type": "WebSite",
               url: "https://ciampitti-lab.github.io/",
-              logo: "https://ciampitti-lab.github.io/icon.png",
-              image: "https://ciampitti-lab.github.io/icon.png",
+              name: "Ciampitti Lab",
+              alternateName: "Ciampitti-Lab",
+              logo: "https://ciampitti-lab.github.io/favicon.png",
             }),
           }}
         />
