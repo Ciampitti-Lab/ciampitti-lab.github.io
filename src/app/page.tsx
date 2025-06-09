@@ -10,7 +10,8 @@ export const metadata = {
 };
 
 // Get first 5 publications
-const slicedPubData = pubData.slice(0, 5);
+const reversedPubData = [...pubData].reverse();
+const slicedPubData = reversedPubData.slice(0, 5);
 export default function Home() {
   return (
     <>
