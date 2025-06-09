@@ -42,7 +42,7 @@ export default function Students() {
                 <div className="flex-grow">
                   <div className="flex items-baseline justify-between mb-3">
                     <h3 className="text-lg font-bold">{member.name}</h3>
-                    <span className="text-lg text-purdue-rush font-medium">
+                    <span className="text-md text-purdue-rush font-medium">
                       {member.role}
                     </span>
                   </div>
