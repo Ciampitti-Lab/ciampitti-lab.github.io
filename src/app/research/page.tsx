@@ -91,7 +91,7 @@ export default function Research() {
           <h2 className="text-3xl font-bold mb-10">Publications</h2>
 
           <div className="space-y-6">
-            {pubData.toReversed().map((publication) => (
+            {[...pubData].reverse().map((publication) => (
               <div
                 key={publication.id}
                 className="bg-white p-6 rounded-lg text-purdue-black shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
@@ -103,16 +103,29 @@ export default function Research() {
                 <div className="flex flex-wrap gap-x-6 text-sm">
                   <span>{publication.journal}</span>
                   <span>{publication.year}</span>
-                  <a
-                    href={`https://doi.org/${publication.doi}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-purdue-gold hover:underline"
-                  >
-                    <span className="text-purdue-rush">
-                      DOI: {publication.doi}
-                    </span>
-                  </a>
+                  {publication.doi ? (
+                    <a
+                      href={`https://doi.org/${publication.doi}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-purdue-gold hover:underline"
+                    >
+                      <span className="text-purdue-rush">
+                        DOI: {publication.doi}
+                      </span>
+                    </a>
+                  ) : (
+                    <a
+                      href={publication.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-purdue-gold hover:underline"
+                    >
+                      <span className="text-purdue-rush">
+                        DOI coming soon - Click to view paper
+                      </span>
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

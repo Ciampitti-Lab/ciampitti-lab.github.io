@@ -87,14 +87,25 @@ export default function Home() {
                 <div className="flex flex-wrap gap-x-6 text-sm">
                   <span className="font-body">{publication.journal}</span>
                   <span className="font-body">{publication.year}</span>
-                  <a
-                    href={`https://doi.org/${publication.doi}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-purdue-field hover:underline font-body"
-                  >
-                    DOI: {publication.doi}
-                  </a>
+                  {publication.doi ? (
+                    <a
+                      href={`https://doi.org/${publication.doi}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-purdue-field hover:underline font-body"
+                    >
+                      DOI: {publication.doi}
+                    </a>
+                  ) : (
+                    <a
+                      href={publication.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-purdue-field hover:underline font-body"
+                    >
+                      DOI coming soon - Click to view paper
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
