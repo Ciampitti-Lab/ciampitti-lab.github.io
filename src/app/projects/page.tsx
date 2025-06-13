@@ -14,7 +14,7 @@ export default function Projects() {
                 {/* Page Header */}
                 <div className="mb-16">
                     <h1 className="text-4xl font-bold mb-4">Research Projects</h1>
-                    <p className="text-lg text-purdue-secondary-gray2">
+                    <p className="text-lg text-white">
                         Explore our latest research projects and publications in digital agriculture and computer vision
                     </p>
                 </div>
