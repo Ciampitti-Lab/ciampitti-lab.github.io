@@ -28,6 +28,7 @@ interface TeamMember {
 interface NewsPost {
   id: string | number;
   title: string;
+  slug: string;
   excerpt: string;
   date: string;
   category: string;
