@@ -19,7 +19,7 @@ export const projects: Project[] = [
             full: "CVPR Workshop Vision for Agriculture 2025"
         },
         links: [
-            { type: "Paper", icon: "📄", url: "https://cvpr.thecvf.com/virtual/2025/35733" },
+            { type: "Paper", icon: "📄", url: "https://openaccess.thecvf.com/content/CVPR2025W/V4A/papers/Cisdeli_Maize_ear_sensing_for_on-farm_yield_predictions_CVPRW_2025_paper.pdf" },
             { type: "Code", icon: "🐙", url: "https://github.com/Ciampitti-Lab/MaizeEarSensing" },
             { type: "CornDepth Dataset", icon: "🌽", url: "https://universe.roboflow.com/ciampittilab/corndepth" },
             { type: "Depth Files", icon: "💾", url: "https://github.com/Ciampitti-Lab/MaizeEarSensing/releases" },
