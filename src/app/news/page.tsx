@@ -69,7 +69,7 @@ export default function News() {
                   {post.excerpt}
                 </p>
                 <Link
-                  href={`/news/${post.id}`}
+                  href={`/news/${post.slug}`}
                   className="text-purdue-rush hover:underline font-medium font-heading text-bold"
                 >
                   Read More

@@ -2,14 +2,14 @@ import fs from "fs";
 import path from "path";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { newsData } from "@/lib/info_helper.server";
 import { MarkdownContent } from "@/app/components/MarkdownContent";
 
 // This function is required for static exports
 export async function generateStaticParams() {
   return newsData.map((post) => ({
-    slug: post.id.toString(),
+    slug: post.slug,
   }));
 }
 
@@ -22,7 +22,18 @@ interface BlogPostPageProps {
 export async function generateMetadata(props: BlogPostPageProps) {
   const params = await props.params;
   const slug = params.slug;
-  const post = newsData.find((post) => post.id.toString() === slug);
+  
+  // First try to find by slug
+  let post = newsData.find((post) => post.slug === slug);
+  
+  // If not found by slug, try to find by ID (for backward compatibility)
+  if (!post) {
+    post = newsData.find((post) => post.id.toString() === slug);
+    // If found by ID, redirect to the slug-based URL
+    if (post) {
+      redirect(`/news/${post.slug}`);
+    }
+  }
 
   if (!post) {
     return {
@@ -40,7 +51,18 @@ export async function generateMetadata(props: BlogPostPageProps) {
 export default async function BlogPostPage(props: BlogPostPageProps) {
   const params = await props.params;
   const slug = params.slug;
-  const post = newsData.find((post) => post.id.toString() === slug);
+  
+  // First try to find by slug
+  let post = newsData.find((post) => post.slug === slug);
+  
+  // If not found by slug, try to find by ID (for backward compatibility)
+  if (!post) {
+    post = newsData.find((post) => post.id.toString() === slug);
+    // If found by ID, redirect to the slug-based URL
+    if (post) {
+      redirect(`/news/${post.slug}`);
+    }
+  }
 
   if (!post) {
     notFound();

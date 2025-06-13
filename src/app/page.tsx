@@ -150,7 +150,7 @@ export default function Home() {
                     <p className="text-gray-600">{post.excerpt}</p>
                   </div>
                   <Link
-                    href={`/news/${post.id}`}
+                    href={`/news/${post.slug}`}
                     className="text-purdue-rush text-bold font-heading hover:underline mt-4"
                   >
                     Read More
