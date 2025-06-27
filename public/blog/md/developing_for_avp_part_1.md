@@ -102,6 +102,8 @@
 
 ![Static Image Detection on AVP Simulator via MLCore and Swift (Image credits: Ultralytics)|width=600px](/blog/img/avp_img_detection.png)
 
+---
+
 ## 2. Live camera feed: the gatekeeper
 
 - **Raw passthrough access is enterprise-only (visionOS 2+).** Public-store apps can't touch the main cameras for privacy reasons; access is behind the entitlement `com.apple.developer.arkit.main-camera-access.allow`.
