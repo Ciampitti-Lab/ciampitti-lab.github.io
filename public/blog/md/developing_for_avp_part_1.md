@@ -1,4 +1,4 @@
-**_Pedro Cisdeli_** - **06/26/2025**
+**_Pedro Cisdeli_**
 
 # Static detection, live-camera hurdles, and the APIs we can already use
 
