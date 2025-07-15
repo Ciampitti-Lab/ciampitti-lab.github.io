@@ -68,7 +68,7 @@
       controls
       style="
         width: 100%;
-        max-width: min(400px, 90vw);
+        max-width: min(400px, 100vw);
         height: auto;
         border-radius: clamp(8px, 1.5vw, 12px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
