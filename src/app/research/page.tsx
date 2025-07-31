@@ -82,7 +82,11 @@ export default function Research() {
             about our work? We welcome partnerships with academic institutions,
             industry, and government agencies.
           </p>
-          <Link href="/team" className="btn-primary">
+          <Link
+            href="https://www.linkedin.com/company/ciampitti-lab/"
+            target="_blank"
+            className="btn-primary"
+          >
             Contact us via LinkedIn
           </Link>
         </div>
