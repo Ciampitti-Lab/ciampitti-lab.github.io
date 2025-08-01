@@ -2,7 +2,7 @@ import path from 'node:path';
 import fs from 'node:fs';
 import * as XLSX from 'xlsx';
 
-/** Generic helper — called once at import time */
+/** Generic helper - called once at import time */
 function readSheet<T = unknown>(sheetName: string): T[] {
   const file = path.join(process.cwd(), 'public', 'data', 'info.xlsx');
   const buffer = fs.readFileSync(file);          // binary read

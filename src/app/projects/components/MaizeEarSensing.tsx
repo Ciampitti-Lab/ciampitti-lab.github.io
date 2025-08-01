@@ -371,7 +371,7 @@ pages     = {5402-5411}
         <footer className="text-center py-8 border-t border-gray-200">
           <p className="text-gray-600">
             © 2025 Pedro Cisdeli, Gustavo Nocera Santiago, German Mandrini,
-            Ignacio Ciampitti; Purdue University – Ciampitti Lab
+            Ignacio Ciampitti; Purdue University - Ciampitti Lab
           </p>
         </footer>
       </div>

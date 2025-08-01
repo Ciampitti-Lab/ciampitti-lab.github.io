@@ -107,7 +107,7 @@
 ## 2. Live camera feed: the gatekeeper
 
 - **Raw passthrough access is enterprise-only (visionOS 2+).** Public-store apps can't touch the main cameras for privacy reasons; access is behind the entitlement `com.apple.developer.arkit.main-camera-access.allow`.
-- We are working on obtaining the necessary entitlement. In the meantime, I'm focusing on what's already possible with the publicly available ARKit stack—which offers
+- We are working on obtaining the necessary entitlement. In the meantime, I'm focusing on what's already possible with the publicly available ARKit stack-which offers
   a lot of capabilities for ag-tech applications, as detailed in topic #3 below.
 
 ---

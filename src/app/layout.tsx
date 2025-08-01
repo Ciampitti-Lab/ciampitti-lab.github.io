@@ -21,7 +21,7 @@ const lora = Lora({
 /* ---------- site-wide <head> metadata ---------- */
 export const metadata: Metadata = {
   metadataBase: new URL("https://ciampitti-lab.github.io"),
-  title: "Ciampitti Lab – Digital Agriculture Research",
+  title: "Ciampitti Lab - Digital Agriculture Research",
   description:
     "Advancing agricultural science through computer vision, data analysis and crop-systems research.",
 
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://ciampitti-lab.github.io/",
     siteName: "Ciampitti Lab",
-    title: "Ciampitti Lab – Digital Agriculture & Farming Systems Research",
+    title: "Ciampitti Lab - Digital Agriculture & Farming Systems Research",
     description:
       "Advancing agricultural science through computer vision, data analysis and crop-systems research.",
     images: [

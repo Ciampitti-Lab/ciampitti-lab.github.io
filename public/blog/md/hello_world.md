@@ -1,6 +1,6 @@
 # Hello, Purdue! 👋
 
-## 1. The Move — Coming Home to the Midwest 🏛️
+## 1. The Move - Coming Home to the Midwest 🏛️
 
 After many productive years at Kansas State, **Ciampitti Lab is relocating to Purdue University’s Department of Agronomy**. Purdue offers stronger field-research infrastructure, easier collaboration with Midwestern partners, and a good fit for our work in crop modeling and digital agriculture. We thank our K-State colleagues for their support and look forward to:
 
@@ -12,7 +12,7 @@ Stay tuned for job postings, field days, and collaborative projects.
 
 ---
 
-## 2. The Website — A Practical Hub for Data-Driven Agriculture 🌐
+## 2. The Website - A Practical Hub for Data-Driven Agriculture 🌐
 
 We rebuilt the site using **Next.js** and **TailwindCSS**:
 
