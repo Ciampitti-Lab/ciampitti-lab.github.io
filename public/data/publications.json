@@ -1,2 +1,452 @@
 [
+  {
+    "id": 1,
+    "title": "A novel framework for evaluating farmer resilience: Methodological advances and theoretical foundations",
+    "authors": "Moller, K., Nejadhashemi, A.P., Tirgari, M., Junior, N.V., Carcedo, A.J.P., Ciampitti, I., Prasad, P.V.V., Diallo, A.",
+    "journal": "Agricultural Systems",
+    "year": "2026",
+    "url": "https://doi.org/10.1016/j.agsy.2025.104554",
+    "doi": "10.1016/j.agsy.2025.104554"
+  },
+  {
+    "id": 2,
+    "title": "Assessing in-season N response and recovery of maize from mild N stress",
+    "authors": "Bosche, L., Gomez, F., Maddonni, G., Hefley, T., Prasad, P.V.V., Van De Woestyne, B., Ciampitti, I.",
+    "journal": "European Journal of Agronomy",
+    "year": "2026",
+    "url": "https://doi.org/10.1016/j.eja.2025.127876",
+    "doi": "10.1016/j.eja.2025.127876"
+  },
+  {
+    "id": 3,
+    "title": "Beyond NUE: A focus on true nitrogen gains in cereals",
+    "authors": "Fernandez, J.A., Ciampitti, I.A.",
+    "journal": "European Journal of Agronomy",
+    "year": "2026",
+    "url": "https://doi.org/10.1016/j.eja.2025.127896",
+    "doi": "10.1016/j.eja.2025.127896"
+  },
+  {
+    "id": 4,
+    "title": "Regional drivers of soybean farmers’ yield, seed protein, and oil concentration",
+    "authors": "Pereyra, V.M., Hernandez, C., Hefley, T., Sharda, A., Prasad, P.V.V., Puntel, L., Balboa, G.R., Moseley, D., Irby, J.T., Francisco, E., Reis, A.F.B., Prestholt, A., McDanel, J., Carroll, M., Casteel, S.N., Pearson, R., Pristolas, J., Singh, M.P., Kovács, P., Ostlie, M.H., Fulton, J., Kyveryga, P., Ciampitti, I.A.",
+    "journal": "Field Crops Research",
+    "year": "2026",
+    "url": "https://doi.org/10.1016/j.fcr.2025.110176",
+    "doi": "10.1016/j.fcr.2025.110176"
+  },
+  {
+    "id": 5,
+    "title": "Comparing continuous-corn and soybean-corn rotation cropping systems in the U.S. central Midwest: Trade-offs among crop yield, nutrient losses, and change in soil organic carbon",
+    "authors": "Li Z, Guan K, Zhou W, Peng B, Nafziger ED, Grant RF, Jin Z, Tang J, Margenot AJ, Lee D, Bernacchi CJ, DeLucia EH, Ciampitti I, Hu T, Ye L, Till J, Jia M",
+    "journal": "Agriculture, Ecosystems and Environment.",
+    "year": "2025",
+    "url": "http://europepmc.org/abstract/AGR/IND609257193",
+    "doi": ""
+  },
+  {
+    "id": 6,
+    "title": "Relevancy of nitrogen nutrition status in low-density tillered maize crops",
+    "authors": "Carlos A. Mejía Álvarez, Diego H. Rotili, Franco Espelet, Karina E. D’Andrea, Ignacio A. Ciampitti, Gustavo Á Maddonni",
+    "journal": "Plant and Soil",
+    "year": "2025",
+    "url": "https://doi.org/10.1007/s11104-025-07980-9",
+    "doi": "10.1007/s11104-025-07980-9"
+  },
+  {
+    "id": 7,
+    "title": "ENSO impacts on maize production: a case study in Argentina",
+    "authors": "Daian FRANCIA LAURENZO, Adrián CORRENDO, Carlos Manuel HERNANDEZ, Ignacio CIAMPITTI, Octavio CAVIGLIA",
+    "journal": "Agricultural and Forest Meteorology",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.agrformet.2025.110773",
+    "doi": "10.1016/j.agrformet.2025.110773"
+  },
+  {
+    "id": 8,
+    "title": "ENSO impacts on maize production: a case study in Argentina",
+    "authors": "FRANCIA LAURENZO D, CORRENDO A, HERNANDEZ CM, CIAMPITTI I, CAVIGLIA O",
+    "journal": "Agricultural and Forest Meteorology.",
+    "year": "2025",
+    "url": "http://europepmc.org/abstract/AGR/IND609281202",
+    "doi": ""
+  },
+  {
+    "id": 9,
+    "title": "Spatiotemporal variability of nitrogen nutrition index in potato fields: A UAV-based machine learning approach using a Bayesian critical nitrogen dilution curve",
+    "authors": "Canicattì M, Peng J, Ciampitti I, Vallone M, Cammarano D",
+    "journal": "Computers and Electronics in Agriculture.",
+    "year": "2025",
+    "url": "http://europepmc.org/abstract/AGR/IND609250582",
+    "doi": ""
+  },
+  {
+    "id": 10,
+    "title": "Influence of elevated temperature on the nutritional profile of Chickpea (Cicer arietinum L.) Seeds",
+    "authors": "Uday Chand Jha, Prafull Salvi, Marilyn Warburton, Harsh Nayyar, Sadiah Shafi, Ignacio A. Ciampitti, Ashis Ranjan Udgata, Kadambot H. M. Siddique, P. V. Vara Prasad",
+    "journal": "PLOS One",
+    "year": "2025",
+    "url": "https://doi.org/10.1371/journal.pone.0330230",
+    "doi": "10.1371/journal.pone.0330230"
+  },
+  {
+    "id": 11,
+    "title": "Leaf phosphorus concentration as a diagnostic tool for predicting grape composition in subtropical viticulture",
+    "authors": "Lincon Stefanello, Raissa Schwalbert, Rai Schwalbert, Filipe Nunes, Luana Garlet, Lucas Dotto, Amanda Krug, Matheus Kulmann, Ignacio Ciampitti, Gustavo Brunetto",
+    "journal": "European Journal of Agronomy",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.eja.2025.127555",
+    "doi": "10.1016/j.eja.2025.127555"
+  },
+  {
+    "id": 12,
+    "title": "Leaf phosphorus concentration as a diagnostic tool for predicting grape composition in subtropical viticulture",
+    "authors": "Stefanello L, Schwalbert R, Schwalbert R, Nunes F, Garlet L, Dotto L, Krug A, Kulmann M, Ciampitti I, Brunetto G",
+    "journal": "European Journal of Agronomy.",
+    "year": "2025",
+    "url": "http://europepmc.org/abstract/AGR/IND608895441",
+    "doi": ""
+  },
+  {
+    "id": 13,
+    "title": "Nitrogen nutrition index as an in-season N diagnostic method for maize yield response to N fertilization",
+    "authors": "Bosche L, Gómez F, Palmero F, Kerns A, Hefley T, Ransom C, Prasad PVV, Van De Woestyne B, Ciampitti I",
+    "journal": "Field Crops Research.",
+    "year": "2025",
+    "url": "http://europepmc.org/abstract/AGR/IND609071929",
+    "doi": ""
+  },
+  {
+    "id": 14,
+    "title": "A digital interactive decision dashboard for crop yield trials",
+    "authors": "Cisdeli P, Nocera Santiago G, Hernandez C, Carcedo A, Prasad PVV, Stamm M, Lingenfelser J, Ciampitti I",
+    "journal": "Computers and Electronics in Agriculture.",
+    "year": "2025",
+    "url": "http://europepmc.org/abstract/AGR/IND608819257",
+    "doi": ""
+  },
+  {
+    "id": 15,
+    "title": "Spatio-temporal yield variation and precipitation within a field",
+    "authors": "van Versendaal E, Hernandez CM, Kyveryga P, Hefley T, Van De Woestyne BW, Vara Prasad PV, Ciampitti IA",
+    "journal": "Computers and Electronics in Agriculture.",
+    "year": "2025",
+    "url": "http://europepmc.org/abstract/AGR/IND608819248",
+    "doi": ""
+  },
+  {
+    "id": 16,
+    "title": "Benchmarking sorghum and maize for both yield and economic advantage in the US Great Plains",
+    "authors": "Gómez F, Sanchis JM, Giménez V, Lingenfelser J, Carcedo A, Massigoge I, Prasad PVV, Ciampitti I",
+    "journal": "Field Crops Research.",
+    "year": "2025",
+    "url": "http://europepmc.org/abstract/AGR/IND608827488",
+    "doi": ""
+  },
+  {
+    "id": 17,
+    "title": "Critical nitrogen dilution curve for estimating nitrogen nutrition index of common beans",
+    "authors": "Soratto RP, Sandaña P, Sousa WS, Fernandes AM, Ciampitti IA",
+    "journal": "Field Crops Research.",
+    "year": "2025",
+    "url": "http://europepmc.org/abstract/AGR/IND608741202",
+    "doi": ""
+  },
+  {
+    "id": 18,
+    "title": "Integrating multi-angle and multi-scale remote sensing for precision nitrogen management in agriculture: A review",
+    "authors": "Zhou Y, Ma Y, Ata-Ul-Karim ST, Wang S, Ciampitti I, Antoniuk V, Wu C, Andersen MN, Cammarano D",
+    "journal": "Computers and Electronics in Agriculture.",
+    "year": "2025",
+    "url": "http://europepmc.org/abstract/AGR/IND609063549",
+    "doi": ""
+  },
+  {
+    "id": 19,
+    "title": "An in‐silico approach exploring sorghum source:sink balance across sorghum hybrids: How many leaves are enough?",
+    "authors": "Lucia Marziotte, Ana J. P. Carcedo, Laura Mayor, P. V. Vara Prasad, Joaquín A. Peraza, Ignacio A. Ciampitti",
+    "journal": "Crop Science",
+    "year": "2025",
+    "url": "https://doi.org/10.1002/csc2.21449",
+    "doi": "10.1002/csc2.21449"
+  },
+  {
+    "id": 20,
+    "title": "Assessing the influence of environmental drivers on soybean seed yield and nitrogen fixation estimates and uncertainties in the United States",
+    "authors": "Almeida LF, Correndo AA, Hefley T, Hintz G, Prasad PVV, Licht M, Casteel S, Singh M, Naeve S, Bais J, Lindsay LF, Conley S, Kleinjan J, Kovács P, Ciampitti IA",
+    "journal": "European Journal of Agronomy.",
+    "year": "2025",
+    "url": "http://europepmc.org/abstract/AGR/IND608741831",
+    "doi": ""
+  },
+  {
+    "id": 21,
+    "title": "Soybean yield and seed quality in equidistant versus non‐equidistant plant arrangements under different densities",
+    "authors": "Emmanuela van Versendaal, Valentina M. Pereyra, Trent Irby, Peter Kovacs, Trevor Hefley, P. V. Vara Prasad, Peter Kyveryga, Bradley W. Van De Woestyne, Ignacio A. Ciampitti",
+    "journal": "Crop Science",
+    "year": "2025",
+    "url": "https://doi.org/10.1002/csc2.21364",
+    "doi": "10.1002/csc2.21364"
+  },
+  {
+    "id": 22,
+    "title": "Yield determination of temperate maize hybrids with different end‐uses: An ecophysiological analysis",
+    "authors": "Yésica D. Chazarreta, Santiago Alvarez Prado, Víctor D. Giménez, Ana J. P. Carcedo, César G. López, Ignacio A. Ciampitti, Maria E. Otegui",
+    "journal": "Crop Science",
+    "year": "2025",
+    "url": "https://doi.org/10.1002/csc2.21414",
+    "doi": "10.1002/csc2.21414"
+  },
+  {
+    "id": 23,
+    "title": "A digital interactive decision dashboard for crop yield trials",
+    "authors": "Cisdeli, P., Nocera Santiago, G., Hernandez, C., Carcedo, A., Prasad, P.V.V., Stamm, M., Lingenfelser, J., Ciampitti, I.",
+    "journal": "Computers and Electronics in Agriculture",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.compag.2025.110037",
+    "doi": "10.1016/j.compag.2025.110037"
+  },
+  {
+    "id": 24,
+    "title": "A global dataset on mungbean for managing seed yield and quality",
+    "authors": "Silva Volpato, N.D., Gomez, F.M., Giménez, V.D., Ciampitti, I.A.",
+    "journal": "Scientific Data",
+    "year": "2025",
+    "url": "https://doi.org/10.1038/s41597-025-05016-6",
+    "doi": "10.1038/s41597-025-05016-6"
+  },
+  {
+    "id": 25,
+    "title": "Agroclimatic analysis for reducing planting risks in Burkina Faso and Senegal",
+    "authors": "Araya, A., Jha, P.K., Ciampitti, I.A., Sharda, V., Prasad, P.V.V.",
+    "journal": "Research Square",
+    "year": "2025",
+    "url": "https://doi.org/10.21203/rs.3.rs-7180722/v1",
+    "doi": "10.21203/rs.3.rs-7180722/v1"
+  },
+  {
+    "id": 26,
+    "title": "Assessing the influence of environmental drivers on soybean seed yield and nitrogen fixation estimates and uncertainties in the United States",
+    "authors": "Almeida, L.F., Correndo, A.A., Hefley, T., Hintz, G., Prasad, P.V.V., Licht, M., Casteel, S., Singh, M., Naeve, S., Bais, J., Lindsay, L., Conley, S., Kleinjan, J., Kovács, P., Ciampitti, I.A.",
+    "journal": "European Journal of Agronomy",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.eja.2024.127428",
+    "doi": "10.1016/j.eja.2024.127428"
+  },
+  {
+    "id": 27,
+    "title": "Benchmarking sorghum and maize for both yield and economic advantage in the US Great Plains",
+    "authors": "Gomez, F., Sanchis, J.M., Giménez, V., Lingenfelser, J., Carcedo, A., Massigoge, I., Prasad, P.V.V., Ciampitti, I.",
+    "journal": "Field Crops Research",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.fcr.2025.109769",
+    "doi": "10.1016/j.fcr.2025.109769"
+  },
+  {
+    "id": 28,
+    "title": "Climate-adaptative management strategies for soybean production under ENSO scenarios in Southern Brazil: An in-silico analysis of crop failure risk",
+    "authors": "Hintz, G., Carcedo, A., Almeida, L.F., Corassa, G., Horbe, T., Pott, L., Schwalbert, R., Hefley, T., Prasad, P.V.V., Ciampitti, I.",
+    "journal": "Agricultural Systems",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.agsy.2024.104153",
+    "doi": "10.1016/j.agsy.2024.104153"
+  },
+  {
+    "id": 29,
+    "title": "Comparing continuous-corn and soybean-corn rotation cropping systems in the U.S. central Midwest: Trade-offs among crop yield, nutrient losses, and change in soil organic carbon",
+    "authors": "Li, Z., Guan, K., Zhou, W., Peng, B., Nafziger, E.D., Grant, R.F., Jin, Z., Tang, J., Margenot, A.J., Lee, D., Bernacchi, C.J., DeLucia, E.H., Ciampitti, I., Hu, T., Ye, L., Till, J., Jia, M.",
+    "journal": "Agriculture Ecosystems and Environment",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.agee.2025.109739",
+    "doi": "10.1016/j.agee.2025.109739"
+  },
+  {
+    "id": 30,
+    "title": "Critical dilution curves for phosphorus, potassium, and sulfur along with relationships to nitrogen for major crops",
+    "authors": "Fontana, M., Bélanger, G., Ciampitti, I., Ziadi, N., Guillaume, T., Steiner, S., Bragazza, L.",
+    "journal": "Plant and Soil",
+    "year": "2025",
+    "url": "https://doi.org/10.1007/s11104-025-07929-y",
+    "doi": "10.1007/s11104-025-07929-y"
+  },
+  {
+    "id": 31,
+    "title": "Critical nitrogen dilution curve for estimating nitrogen nutrition index of common beans",
+    "authors": "Soratto, R.P., Sandaña, P., Sousa, W.S., Fernandes, A.M., Ciampitti, I.A.",
+    "journal": "Field Crops Research",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.fcr.2024.109713",
+    "doi": "10.1016/j.fcr.2024.109713"
+  },
+  {
+    "id": 32,
+    "title": "Cropping potential of forage soybean as a summer forage in Midwest U.S. rainfed systems",
+    "authors": "Baral, R., Kim, J., Bhattarai, B., Koirala, H., Massigoge, I., Denson, E., Guareschi, C., Cominelli, S., Rud, J.P., Bezerra de Oliveira, J., Helguera, P.G., Ciampitti, I.A., Rice, C.W., Min, D.",
+    "journal": "Frontiers in Agronomy",
+    "year": "2025",
+    "url": "https://doi.org/10.3389/fagro.2025.1570567",
+    "doi": "10.3389/fagro.2025.1570567"
+  },
+  {
+    "id": 33,
+    "title": "DP202216 maize hybrids shift upper limit of C and N partitioning to grain",
+    "authors": "Palmero, F., Fernandez, J.A., Habben, J.E., Schussler, J.R., Weers, B., Bing, J., Hefley, T., Prasad, P.V.V., Ciampitti, I.A.",
+    "journal": "Frontiers in Plant Science",
+    "year": "2025",
+    "url": "https://doi.org/10.3389/fpls.2025.1459126",
+    "doi": "10.3389/fpls.2025.1459126"
+  },
+  {
+    "id": 34,
+    "title": "Differential physiological and yield responses of selected mung bean (Vigna radiata (L.) R. Wilczek) genotypes to various high-temperature stress regimes",
+    "authors": "Jha, U.C., Shafi, S., Tallury, S., Nayyar, H., Ciampitti, I.A., Siddique, K.H.M., Prasad, P.V.V.",
+    "journal": "Scientific Reports",
+    "year": "2025",
+    "url": "https://doi.org/10.1038/s41598-024-84615-6",
+    "doi": "10.1038/s41598-024-84615-6"
+  },
+  {
+    "id": 35,
+    "title": "Dynamic changes in seed nutritional components of mung bean [(Vigna radiata (L.) R. Wilczek)] under heat stress",
+    "authors": "Jha, U.C., Shafi, S., Tallury, S., Nayyar, H., Udgata, A.R., Ciampitti, I.A., Siddique, K.H.M., Prasad, P.V.V.",
+    "journal": "Scientific Reports",
+    "year": "2025",
+    "url": "https://doi.org/10.1038/s41598-025-93992-5",
+    "doi": "10.1038/s41598-025-93992-5"
+  },
+  {
+    "id": 36,
+    "title": "Environmental and societal costs of maize production decrease by addressing the uncertainty in nitrogen rate recommendations",
+    "authors": "Palmero, F., Davidson, E.A., Guan, K., Eagle, A.J., Birge, H.E., Prasad, P.V.V., Hefley, T.J., Schussler, J.R., Ciampitti, I.A.",
+    "journal": "Research Square",
+    "year": "2025",
+    "url": "https://doi.org/10.21203/rs.3.rs-6735572/v1",
+    "doi": "10.21203/rs.3.rs-6735572/v1"
+  },
+  {
+    "id": 37,
+    "title": "Estimating Total Polyphenol Content of Ilex paraguariensis Water Extracts Using Colorimetric Methods and Machine Learning",
+    "authors": "Santiago, G.N., de Freitas Wendt, A., Putarov, P.C., Pereira, T.S.A., Ciampitti, I.",
+    "journal": "Chemrxiv",
+    "year": "2025",
+    "url": "https://doi.org/10.26434/chemrxiv-2025-6jnt3",
+    "doi": "10.26434/chemrxiv-2025-6jnt3"
+  },
+  {
+    "id": 38,
+    "title": "Integrating multi-angle and multi-scale remote sensing for precision nitrogen management in agriculture: A review",
+    "authors": "Zhou, Y., Ma, Y., Ata-Ul-Karim, S.T., Wang, S., Ciampitti, I., Antoniuk, V., Wu, C., Andersen, M.N., Cammarano, D.",
+    "journal": "Computers and Electronics in Agriculture",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.compag.2024.109829",
+    "doi": "10.1016/j.compag.2024.109829"
+  },
+  {
+    "id": 39,
+    "title": "Intensifying cropping sequences in the US Central Great Plains: an in silico analysis of a sorghum–wheat sequence",
+    "authors": "Marziotte, L., Carcedo, A.J.P., Rodriguez, D., Mayor, L., Prasad, P.V.V., Ciampitti, I.A.",
+    "journal": "Frontiers in Plant Science",
+    "year": "2025",
+    "url": "https://doi.org/10.3389/fpls.2025.1525128",
+    "doi": "10.3389/fpls.2025.1525128"
+  },
+  {
+    "id": 40,
+    "title": "Maize Ear Sensing for on-Farm Yield Predictions",
+    "authors": "Cisdeli, P., Santiago, G.N., Mandrini, G., Ciampitti, I.",
+    "journal": "IEEE Computer Society Conference on Computer Vision and Pattern Recognition Workshops",
+    "year": "2025",
+    "url": "https://doi.org/10.1109/CVPRW67362.2025.00537",
+    "doi": "10.1109/CVPRW67362.2025.00537"
+  },
+  {
+    "id": 41,
+    "title": "Nighttime warming affects yields of major grain crops: A global meta-analysis",
+    "authors": "Giménez, V.D., Serrago, R.A., Kettler, B., García, G.A., Impa, S.M., Krishna Jagadish, S.V., Prasad, P.V.V., Miralles, D.J., Ciampitti, I.A.",
+    "journal": "Field Crops Research",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.fcr.2025.110142",
+    "doi": "10.1016/j.fcr.2025.110142"
+  },
+  {
+    "id": 42,
+    "title": "Nitrogen nutrition index as an in-season N diagnostic method for maize yield response to N fertilization",
+    "authors": "Bosche, L., Gomez, F., Palmero, F., Kerns, A., Hefley, T., Ransom, C., Prasad, P.V.V., Van De Woestyne, B., Ciampitti, I.",
+    "journal": "Field Crops Research",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.fcr.2025.109941",
+    "doi": "10.1016/j.fcr.2025.109941"
+  },
+  {
+    "id": 43,
+    "title": "Out of sight, out of mind: Night-temperature impact on major field crops",
+    "authors": "Serrago, R.A., Giménez, V.D., García, G.A., Miralles, D.J., Slafer, G.A., Ciampitti, I.A.",
+    "journal": "Field Crops Research",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.fcr.2025.110108",
+    "doi": "10.1016/j.fcr.2025.110108"
+  },
+  {
+    "id": 44,
+    "title": "Soybean critical N dilution curve using non-nodulating genotypes",
+    "authors": "Hintz, G., Almeida, L.F., Gomez, F.M., Bosche, L., Hefley, T., Prasad, P.V.V., Lemaire, G., Ciampitti, I.",
+    "journal": "Plant and Soil",
+    "year": "2025",
+    "url": "https://doi.org/10.1007/s11104-025-07650-w",
+    "doi": "10.1007/s11104-025-07650-w"
+  },
+  {
+    "id": 45,
+    "title": "Spatial Patterns and Determinants of Agricultural Resilience: Evidence From Senegal",
+    "authors": "Tirgariseraji, M., Nejadhashemi, A.P., Ciampitti, I., Prasad, P.V.V.",
+    "journal": "Food and Energy Security",
+    "year": "2025",
+    "url": "https://doi.org/10.1002/fes3.70070",
+    "doi": "10.1002/fes3.70070"
+  },
+  {
+    "id": 46,
+    "title": "Spatio-temporal yield variation and precipitation within a field",
+    "authors": "van Versendaal, E., Hernandez, C.M., Kyveryga, P., Hefley, T., Van De Woestyne, B.W., Vara Prasad, P.V., Ciampitti, I.A.",
+    "journal": "Computers and Electronics in Agriculture",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.compag.2025.109996",
+    "doi": "10.1016/j.compag.2025.109996"
+  },
+  {
+    "id": 47,
+    "title": "Spatiotemporal variability of nitrogen nutrition index in potato fields: A UAV-based machine learning approach using a Bayesian critical nitrogen dilution curve",
+    "authors": "Canicattì, M., Peng, J., Ciampitti, I., Vallone, M., Cammarano, D.",
+    "journal": "Computers and Electronics in Agriculture",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.compag.2025.110767",
+    "doi": "10.1016/j.compag.2025.110767"
+  },
+  {
+    "id": 48,
+    "title": "Towards site-specific nutrient management strategies: An open database in Senegal",
+    "authors": "Gomez, F., Carcedo, A., Diatta, A., Djighaly, P., Nagarajan, L., Singh, U., Stewart, Z., Zingore, S., Majumdar, K., Prasad, P.V.V., Ciampitti, I.",
+    "journal": "Science of the Total Environment",
+    "year": "2025",
+    "url": "https://doi.org/10.1016/j.scitotenv.2025.178926",
+    "doi": "10.1016/j.scitotenv.2025.178926"
+  },
+  {
+    "id": 49,
+    "title": "Trends in agricultural technology: a review of US patents",
+    "authors": "Cano, P.B., Carcedo, A.J.P., Hernandez, C.M., Gomez, F.M., Gimenez, V.D., Kyveryga, P.M., Ciampitti, I.A.",
+    "journal": "Precision Agriculture",
+    "year": "2025",
+    "url": "https://doi.org/10.1007/s11119-025-10257-x",
+    "doi": "10.1007/s11119-025-10257-x"
+  },
+  {
+    "id": 50,
+    "title": "Rowing in the Same Direction Using MIX—A Tool to Initiate the Melding of Individual Disciplinary Experts into an Integrated Interdisciplinary Team",
+    "authors": "Martha E. Mather, Jason S. Bergtold, Marcellus M. Caldas, Ethan M. Bernick, Trisha L. Moore, Gabriel Granco, Aleksey Y. Sheshukov, Ignacio A. Ciampitti",
+    "journal": "Sustainability",
+    "year": "2024",
+    "url": "https://doi.org/10.3390/su162310625",
+    "doi": "10.3390/su162310625"
+  }
 ]
