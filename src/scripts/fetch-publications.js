@@ -1,7 +1,7 @@
 // scripts/fetch-publications.js
-const https = require("https");
-const fs = require("fs");
-const path = require("path");
+import https from 'https';
+import fs from 'fs';
+import path from 'path';
 
 const ORCID_ID = process.env.ORCID_ID;
 const CLIENT_ID = process.env.ORCID_CLIENT_ID;
