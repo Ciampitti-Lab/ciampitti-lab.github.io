@@ -95,7 +95,7 @@ export default function Research() {
           <h2 className="text-3xl font-bold mb-10">Publications</h2>
 
           <div className="space-y-6">
-            {[...pubData].reverse().map((publication) => (
+            {[...pubData].map((publication) => (
               <div
                 key={publication.id}
                 className="bg-white p-6 rounded-lg text-purdue-black shadow-sm border border-gray-100 hover:shadow-md transition-shadow"

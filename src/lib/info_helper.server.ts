@@ -14,6 +14,19 @@ function readSheet<T = unknown>(sheetName: string): T[] {
   return XLSX.utils.sheet_to_json<T>(wb.Sheets[sheetName]);
 }
 
+/** Read data from JSON file */
+function readJSON<T = unknown>(fileName: string): T[] {
+  const file = path.join(process.cwd(), 'public', 'data', fileName);
+  
+  if (!fs.existsSync(file)) {
+    console.warn(`JSON file not found: ${file}. Returning empty array.`);
+    return [];
+  }
+  
+  const content = fs.readFileSync(file, 'utf-8');
+  return JSON.parse(content) as T[];
+}
+
 // Interface for team data
 interface TeamMember {
   id: string | number;
@@ -48,4 +61,4 @@ interface Publication {
 /** Constants are evaluated once during the build / first server start */
 export const teamData = readSheet<TeamMember>('team');
 export const newsData = readSheet<NewsPost>('news');
-export const pubData = readSheet<Publication>('publications');
+export const pubData = readJSON<Publication>('publications.json');
