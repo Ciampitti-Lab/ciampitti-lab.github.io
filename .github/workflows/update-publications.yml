@@ -38,7 +38,8 @@ jobs:
       - name: Check for changes
         id: check_changes
         run: |
-          if git diff --quiet public/data/publications.json; then
+          git add public/data/publications.json
+          if git diff --staged --quiet; then
             echo "changes=false" >> $GITHUB_OUTPUT
           else
             echo "changes=true" >> $GITHUB_OUTPUT
