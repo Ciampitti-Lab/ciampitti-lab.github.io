@@ -51,7 +51,7 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add public/data/publications.json
-          git commit -m "chore: update publications from ORCID [skip ci]"
+          git commit -m "chore: update publications from ORCID"
           git push
       
       - name: No changes detected
