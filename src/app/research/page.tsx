@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { pubData } from "@/lib/info_helper.server";
+import PaginatedPublications from "@/app/components/PaginatedPublications";
 
 export const metadata = {
   title: "Ciampitti Lab - Publications",
@@ -94,46 +95,7 @@ export default function Research() {
         <div id="publications" className="mt-16 scroll-mt-16">
           <h2 className="text-3xl font-bold mb-10">Publications</h2>
 
-          <div className="space-y-6">
-            {[...pubData].map((publication) => (
-              <div
-                key={publication.id}
-                className="bg-white p-6 rounded-lg text-purdue-black shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
-              >
-                <h3 className="text-lg font-bold mb-2">{publication.title}</h3>
-                <p className="text-purdue-secondary-gray2 mb-2">
-                  {publication.authors}
-                </p>
-                <div className="flex flex-wrap gap-x-6 text-sm">
-                  <span>{publication.journal}</span>
-                  <span>{publication.year}</span>
-                  {publication.doi ? (
-                    <a
-                      href={`https://doi.org/${publication.doi}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-purdue-gold hover:underline"
-                    >
-                      <span className="text-purdue-rush">
-                        DOI: {publication.doi}
-                      </span>
-                    </a>
-                  ) : (
-                    <a
-                      href={publication.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-purdue-gold hover:underline"
-                    >
-                      <span className="text-purdue-rush">
-                        DOI coming soon - Click to view paper
-                      </span>
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+          <PaginatedPublications publications={pubData} itemsPerPage={10} />
 
           <div className="mt-8 text-center">
             <a
@@ -141,7 +103,7 @@ export default function Research() {
               target="_blank"
               className="btn-secondary bg-white text-purdue-black"
             >
-              View All Publications
+              View All Publications on Google Scholar
             </a>
           </div>
         </div>
