@@ -8,6 +8,12 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
+  # Trigger run after updating publication files
+  workflow_run:
+    workflows: ["Update Publications"]
+    types:
+      - completed
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
