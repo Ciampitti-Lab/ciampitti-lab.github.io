@@ -48,6 +48,12 @@ export default function Header() {
               Projects
             </Link>
             <Link
+              href="/tools"
+              className="hover:text-purdue-gold transition-colors"
+            >
+              Tools
+            </Link>
+            <Link
               href="/team"
               className="hover:text-purdue-gold transition-colors"
             >
@@ -126,6 +132,12 @@ export default function Header() {
               className="block hover:text-purdue-gold transition-colors"
             >
               Projects
+            </Link>
+            <Link
+              href="/tools"
+              className="block hover:text-purdue-gold transition-colors"
+            >
+              Tools
             </Link>
             <Link
               href="/news"
