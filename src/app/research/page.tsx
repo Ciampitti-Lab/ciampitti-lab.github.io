@@ -11,21 +11,47 @@ export const metadata = {
 const researchAreas = [
   {
     label: "01",
-    title: "Agricultural Data Analysis",
+    title: "Crop Physiology",
     description:
-      "Leveraging big data approaches to analyze field performance data, weather patterns, and crop responses to various management practices. We develop predictive models and decision support tools to optimize agricultural operations.",
+      "How environmental factors and agronomic practices shape plant biology. Field trials translate those interactions into concrete farming recommendations.",
+    highlights: [
+      "Sulfur deficiency across the US Midwest & South",
+      "Nitrogen Nutrition Index (NNI) in corn",
+      "Corn-to-soybean yield ratio dynamics",
+    ],
   },
   {
     label: "02",
-    title: "Crop Management Systems",
+    title: "Digital Agriculture",
     description:
-      "Investigating innovative crop management strategies that enhance yield, quality, and sustainability. Our research combines traditional field research with digital agriculture approaches to optimize inputs and management practices.",
+      "Crop modeling and advanced algorithms turning satellite, weather, and soil data into predictive models and decision-support tools.",
+    highlights: [
+      "Indiana Nitrogen Initiative (INNI)",
+      "AI-driven seed recommendation tool",
+      "Indiana envirotyping & regional clustering",
+    ],
   },
   {
     label: "03",
-    title: "Computer Vision in Agriculture",
+    title: "Computer Vision",
     description:
-      "Using image recognition and processing techniques to monitor crop health, detect diseases, and measure plant growth parameters. Our work aims to automate phenotypic data collection and enable early detection of stress conditions.",
+      "Image recognition and processing to monitor crop health, detect disease, and automate phenotypic data collection in the field.",
+    highlights: [
+      "High-throughput phenotyping for wheat, corn & sorghum",
+      "Smartphone imagery for in-field measurements",
+      "Improving remote sensing yield estimates",
+    ],
+  },
+  {
+    label: "04",
+    title: "Exploratory Research",
+    description:
+      "Emerging initiatives at the intersection of policy, technology adoption, and the broader research landscape in agriculture.",
+    highlights: [
+      "4R nitrogen sustainability programs",
+      "Agricultural publication & patent analysis",
+      "Precision ag adoption survey",
+    ],
   },
 ];
 
@@ -62,11 +88,11 @@ export default function Research() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {researchAreas.map((area) => (
               <div
                 key={area.label}
-                className="bg-black border border-white/25 rounded-sm p-8 hover:border-purdue-gold/40 transition-colors"
+                className="bg-black border border-white/25 rounded-sm p-8 md:p-10 hover:border-purdue-gold/40 transition-colors"
               >
                 <span className="font-heading text-[11px] font-medium tracking-[0.3em] text-purdue-gold/80">
                   {area.label}
@@ -74,9 +100,25 @@ export default function Research() {
                 <h3 className="mt-5 font-heading font-medium text-xl md:text-2xl text-white leading-snug">
                   {area.title}
                 </h3>
-                <p className="mt-4 text-sm text-white/70 font-body leading-relaxed">
+                <p className="mt-4 text-sm md:text-base text-white/75 font-body leading-relaxed">
                   {area.description}
                 </p>
+
+                <div className="mt-7 pt-6 border-t border-white/15">
+                  <p className="font-heading text-[10px] font-medium tracking-[0.3em] uppercase text-white/45 mb-2">
+                    Current Initiatives
+                  </p>
+                  <ul>
+                    {area.highlights.map((item) => (
+                      <li
+                        key={item}
+                        className="py-3 border-b border-white/10 last:border-b-0 text-sm text-white/80 font-body leading-relaxed"
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>

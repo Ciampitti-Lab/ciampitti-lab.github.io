@@ -10,21 +10,27 @@ export const metadata = {
 const focusAreas = [
   {
     label: "01",
-    title: "Agricultural Data Analysis",
+    title: "Crop Physiology",
     description:
-      "Leveraging big data approaches to analyze field performance data, weather patterns, and crop responses. We develop predictive models and decision support tools to help optimize agricultural operations.",
+      "How environmental factors and agronomic practices shape plant biology. Field trials translate those interactions into concrete farming recommendations.",
   },
   {
     label: "02",
-    title: "Crop Management Systems",
+    title: "Digital Agriculture",
     description:
-      "Investigating innovative crop management strategies that enhance yield, quality, and sustainability through traditional field research and digital agriculture approaches.",
+      "Crop modeling and advanced algorithms turning satellite, weather, and soil data into predictive models and decision-support tools.",
   },
   {
     label: "03",
-    title: "Computer Vision in Agriculture",
+    title: "Computer Vision",
     description:
-      "Using image recognition and processing techniques to monitor crop health, detect diseases, and measure plant growth parameters at the field scale.",
+      "Image recognition and processing to monitor crop health, detect disease, and automate phenotypic data collection in the field.",
+  },
+  {
+    label: "04",
+    title: "Exploratory Research",
+    description:
+      "Emerging initiatives across policy, technology adoption, and the broader research landscape in agriculture.",
   },
 ];
 
@@ -119,11 +125,11 @@ export default function About() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
             {focusAreas.map((area) => (
               <div
                 key={area.label}
-                className="bg-purdue-surface border border-white/25 rounded-sm p-8 hover:border-purdue-gold/40 transition-colors"
+                className="bg-purdue-surface border border-white/25 rounded-sm p-8 md:p-10 hover:border-purdue-gold/40 transition-colors"
               >
                 <span className="font-heading text-[11px] font-medium tracking-[0.3em] text-purdue-gold/80">
                   {area.label}
@@ -131,7 +137,7 @@ export default function About() {
                 <h3 className="mt-5 font-heading font-medium text-xl md:text-2xl text-white leading-snug">
                   {area.title}
                 </h3>
-                <p className="mt-4 text-sm text-white/75 font-body leading-relaxed">
+                <p className="mt-4 text-sm md:text-base text-white/75 font-body leading-relaxed">
                   {area.description}
                 </p>
               </div>

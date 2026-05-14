@@ -204,7 +204,7 @@ export default function MaizeEarSensing({ project }: ProjectProps) {
 
       {/* ── Why it Matters ─────────────────────────────────────── */}
       <section className="py-20 md:py-28 bg-black border-t border-white/25">
-        <div className="container-custom max-w-4xl">
+        <div className="container-custom">
           <div className="mb-12 md:mb-16">
             <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-4">
               04 &mdash; Impact
