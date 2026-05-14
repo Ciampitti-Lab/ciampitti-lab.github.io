@@ -22,7 +22,7 @@ export default function FacilityCarousel() {
   }, []);
 
   return (
-    <div className="relative w-full h-64 overflow-hidden rounded-lg border-4 border-double border-purdue-gold">
+    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-sm border border-white/25">
       {IMAGES.map((img, i) => {
         const active = i === index;
         return (

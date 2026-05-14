@@ -23,7 +23,7 @@ export default function ConditionalLayout({
     return (
         <>
             <Header />
-            <main className="flex-grow">{children}</main>
+            <main className="flex-grow pt-[72px]">{children}</main>
             <Footer />
         </>
     );

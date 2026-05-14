@@ -23,7 +23,7 @@ export const tools: Tool[] = [
     {
         slug: "n-rate-iq",
         title: "N Rate IQ",
-        description: "Crop modeling-based decision support for corn nitrogen fertilization across Indiana. Uses the MRTN approach to recommend economically optimal N rates based on local grain and nitrogen prices.",
+        description: "Crop modeling-based decision support tool for corn nitrogen fertilization across Indiana. Uses the MRTN approach to recommend economically optimal N rates based on local grain and nitrogen prices.",
         url: "https://nrateiq.ciampittilab.org",
         thumbnail: "/tools/nrateiq.png",
         tag: "Decision Support",

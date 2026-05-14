@@ -4,377 +4,303 @@ import { ProjectProps, Author, ProjectLink } from "../types";
 
 export default function MaizeEarSensing({ project }: ProjectProps) {
   return (
-    <div className="min-h-screen bg-white font-sans text-gray-900">
-      {/* Back to Lab Button */}
-      <div className="absolute top-6 left-6 z-50">
-        <Link
-          href="/"
-          className="inline-flex items-center px-4 py-2 bg-white/90 backdrop-blur hover:bg-white rounded-full text-sm font-medium transition-colors shadow-md border border-gray-200"
-        >
-          <svg
-            className="w-4 h-4 mr-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+    <>
+      {/* ── Article Header ─────────────────────────────────────── */}
+      <section className="pt-28 pb-12 md:pt-36 md:pb-16 border-b border-white/25">
+        <div className="container-custom max-w-5xl fade-up">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-3 text-xs font-heading tracking-[0.24em] uppercase text-white/70 hover:text-purdue-gold transition-colors mb-10 group"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            />
-          </svg>
-          Back to Lab
-        </Link>
-      </div>
+            <span className="h-px w-8 bg-white/40 group-hover:w-12 group-hover:bg-purdue-gold transition-all duration-500" />
+            Back to Projects
+          </Link>
 
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center">
-        {/* Hero Background Image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-100 to-yellow-50">
-          <div className="w-full h-full bg-gradient-to-b from-transparent to-white/60" />
-        </div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 text-center max-w-5xl mx-auto px-8 mt-16 sm:mt-0">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-gray-900">
-            {project.title}
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 mb-6 font-light">
-            {project.abstract}
-          </p>
-
-          {/* Venue */}
-          <div className="mb-8">
+          <div className="flex items-center gap-4 mb-6 flex-wrap">
             <a
               href="https://cvpr.thecvf.com/virtual/2025/35733"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-full text-lg font-medium shadow-lg transition-colors"
+              className="bg-purdue-gold px-2.5 py-1 text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-purdue-black rounded-sm hover:bg-purdue-gold/90 transition-colors"
             >
-              <span className="mr-2">📅</span>
-              {project.venue.full}
+              {project.venue.short}
             </a>
+            <span className="h-px w-8 bg-white/30" />
+            <span className="font-heading text-[11px] font-medium tracking-[0.24em] uppercase text-white/65">
+              {project.venue.full}
+            </span>
           </div>
 
+          <h1 className="font-heading font-extralight text-white text-4xl md:text-5xl lg:text-6xl tracking-[-0.025em] leading-[1.05]">
+            {project.title}
+          </h1>
+
+          <p className="mt-8 text-base md:text-lg text-white/80 font-body leading-relaxed max-w-3xl">
+            {project.abstract}
+          </p>
+
           {/* Authors */}
-          <div className="mb-8">
-            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-lg text-gray-600">
+          <div className="mt-10">
+            <p className="text-sm text-white/75 font-body leading-relaxed">
               {project.authors.map((author: Author, index: number) => (
-                <span key={index} className="whitespace-nowrap">
-                  {author.name}
-                  <sup className="text-green-600 ml-1">{author.sup}</sup>
+                <span key={index}>
+                  <span className="whitespace-nowrap">
+                    <span className="text-white/95">{author.name}</span>
+                    <sup className="text-purdue-gold/80 ml-0.5 text-[10px]">
+                      {author.sup}
+                    </sup>
+                  </span>
                   {index < project.authors.length - 1 && (
-                    <span className="text-gray-400">,</span>
+                    <span className="text-white/30"> &middot; </span>
                   )}
                 </span>
               ))}
-            </div>
-            <div className="text-green-700 mt-2 font-medium">
+            </p>
+            <p className="mt-3 text-xs font-body text-white/55">
+              <sup className="text-purdue-gold/70 mr-1">1</sup>
               {project.affiliations[0].name}
-            </div>
+            </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap justify-center gap-4">
-            {project.links.map((link: ProjectLink, index: number) => {
-              const buttonColors = [
-                "bg-green-600 hover:bg-green-700", // Paper
-                "bg-blue-600 hover:bg-blue-700", // Code
-                "bg-yellow-600 hover:bg-yellow-700", // Dataset
-                "bg-purple-600 hover:bg-purple-700", // Depth Files
-              ];
-
-              // Render GitHub logo for Code link
-              const renderIcon = () => {
-                if (link.type === "Code") {
-                  return (
-                    <svg
-                      className="w-5 h-5 mr-2"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                  );
-                }
-                return <span className="mr-2">{link.icon}</span>;
-              };
-
-              return (
+          {project.links.length > 0 && (
+            <div className="mt-10 flex flex-wrap gap-3">
+              {project.links.map((link: ProjectLink, index: number) => (
                 <a
                   key={index}
                   href={link.url}
                   target="_blank"
-                  className={`inline-flex items-center px-6 py-3 ${buttonColors[index] || "bg-gray-600 hover:bg-gray-700"} text-white rounded-lg transition-colors shadow-lg font-medium`}
+                  rel="noopener noreferrer"
+                  className={index === 0 ? "btn-primary" : "btn-secondary"}
                 >
-                  {renderIcon()}
                   {link.type}
                 </a>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden sm:block">
-          <svg
-            className="w-6 h-6 text-gray-400"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-8 py-16">
-        {/* Abstract Hero Section */}
-        <section className="relative py-20 mb-20">
-          {/* Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-green-25 to-yellow-50">
-            <div className="w-full h-full bg-gradient-to-b from-transparent to-white/40" />
-          </div>
-
-          <div className="relative z-10 grid lg:grid-cols-2 gap-20 items-center max-w-7xl mx-auto px-8">
-            {/* Abstract Text */}
+      {/* ── Hero Image + Abstract ─────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-purdue-surface">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-10 text-gray-900">
-                Abstract
+              <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-4">
+                01 &mdash; Abstract
+              </p>
+              <h2 className="font-heading font-extralight text-white text-3xl md:text-4xl lg:text-5xl tracking-[-0.02em] leading-[1] mb-8">
+                The <span className="font-bold text-purdue-gold">approach.</span>
               </h2>
-              <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
+              <div className="space-y-5 text-base md:text-lg text-white/80 font-body leading-relaxed">
                 <p>
                   We introduce the first fully on-field pipeline that estimates
                   maize-ear length, width and volume from a single RGB + depth
                   capture and immediately forecasts grain yield per plant. A
-                  YOLOv12n-seg model isolates the ear in unconstrained lighting,
-                  a bespoke network (<em>EVNet</em>) regresses volume from the
-                  segmented point cloud, and gradient-boosted trees convert
-                  morphology into yield.
+                  YOLOv12n-seg model isolates the ear in unconstrained
+                  lighting, a bespoke network (<em>EVNet</em>) regresses volume
+                  from the segmented point cloud, and gradient-boosted trees
+                  convert morphology into yield.
                 </p>
-                <p>
+                <p className="text-white/70">
                   On Kansas field data we reach{" "}
-                  <strong className="text-green-800 font-semibold">
-                    98.6% mAP@0.5 for segmentation, 28.9 ml RMSE for volume, and
-                    13.9 g RMSE for yield (ideal) / 24.1 g (real)
+                  <strong className="text-purdue-gold font-semibold">
+                    98.6% mAP@0.5 for segmentation, 28.9 ml RMSE for volume,
+                    and 13.9 g RMSE for yield (ideal) / 24.1 g (real)
                   </strong>
-                  . The pipeline runs in ≈1 s per image, needs no destructive
-                  sampling, and the images, code, and trained weights are
-                  open-sourced.
+                  . The pipeline runs in approximately 1 s per image, needs no
+                  destructive sampling, and the images, code, and trained
+                  weights are open-sourced.
                 </p>
               </div>
             </div>
 
-            {/* Hero Image */}
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
+            <div className="relative">
+              <div className="relative aspect-square overflow-hidden rounded-sm border border-white/25 bg-black">
                 <Image
                   src={"/projects/maize_ear_sensing/hero.png"}
                   alt="Field setup showing maize ear detection in action"
-                  width={700}
-                  height={500}
-                  className="w-full h-auto object-contain drop-shadow-2xl"
+                  fill
+                  className="object-contain p-4"
                   loading="lazy"
                 />
-                <div className="mt-6 text-center">
-                  <p className="text-lg font-medium text-gray-700">
-                    Real-time field deployment
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    Maize ear detection & yield prediction
-                  </p>
-                </div>
               </div>
+              <p className="mt-4 text-xs font-heading uppercase tracking-[0.28em] text-white/55 text-center">
+                Real-time field deployment
+              </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Pipeline */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">
-              Our Pipeline
+      {/* ── Pipeline ───────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-black border-t border-white/25">
+        <div className="container-custom max-w-6xl">
+          <div className="mb-12 md:mb-16">
+            <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-4">
+              02 &mdash; Method
+            </p>
+            <h2 className="font-heading font-extralight text-white text-3xl md:text-4xl lg:text-5xl tracking-[-0.02em] leading-[1]">
+              Our <span className="font-bold text-purdue-gold">Pipeline.</span>
             </h2>
           </div>
 
-          {/* Pipeline Image */}
-          <div className="w-full max-w-6xl mx-auto mb-12">
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl shadow-lg p-8 border border-gray-200">
-              <Image
-                src={"/projects/maize_ear_sensing/pipeline.png"}
-                alt="Maize ear sensing pipeline diagram"
-                width={1200}
-                height={450}
-                className="w-full h-auto object-contain"
-                loading="lazy"
-              />
-            </div>
+          <div className="relative overflow-hidden rounded-sm border border-white/25 bg-white p-6 md:p-10">
+            <Image
+              src={"/projects/maize_ear_sensing/pipeline.png"}
+              alt="Maize ear sensing pipeline diagram"
+              width={1400}
+              height={520}
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Key Results */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">
-              Key Results
+      {/* ── Key Results ────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-purdue-surface border-t border-white/25">
+        <div className="container-custom">
+          <div className="mb-12 md:mb-16">
+            <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-4">
+              03 &mdash; Results
+            </p>
+            <h2 className="font-heading font-extralight text-white text-3xl md:text-4xl lg:text-5xl tracking-[-0.02em] leading-[1]">
+              Key <span className="font-bold text-purdue-gold">Numbers.</span>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
-              <div className="text-3xl mb-4 text-center">🎯</div>
-              <h3 className="text-lg font-semibold mb-2 text-center">
-                Segmentation
-              </h3>
-              <p className="text-gray-600 text-sm text-center mb-2">
-                95.8% precision/recall
-              </p>
-              <p className="text-green-600 font-bold text-center">
-                mAP@0.5 = 98.6%
-              </p>
-              <p className="text-gray-500 text-xs text-center mt-1">
-                1.11s per image
-              </p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
-              <div className="text-3xl mb-4 text-center">📏</div>
-              <h3 className="text-lg font-semibold mb-2 text-center">
-                Volume (Real-world)
-              </h3>
-              <p className="text-blue-600 font-bold text-center">R² = 0.88</p>
-              <p className="text-gray-600 text-sm text-center">
-                RMSE = 28.9 ml
-              </p>
-            </div>
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
-              <div className="text-3xl mb-4 text-center">🌽</div>
-              <h3 className="text-lg font-semibold mb-2 text-center">
-                Yield (Ideal)
-              </h3>
-              <p className="text-purple-600 font-bold text-center">R² = 0.96</p>
-              <p className="text-gray-600 text-sm text-center">RMSE = 13.9g</p>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-100">
-              <div className="text-3xl mb-4 text-center">🌽</div>
-              <h3 className="text-lg font-semibold mb-2 text-center">
-                Yield (Real-world)
-              </h3>
-              <p className="text-yellow-600 font-bold text-center">R² = 0.89</p>
-              <p className="text-gray-600 text-sm text-center">RMSE = 24.1g</p>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {[
+              { label: "01", title: "Segmentation", primary: "98.6%", primaryLabel: "mAP@0.5", secondary: "95.8% precision / recall · 1.11s per image" },
+              { label: "02", title: "Volume (Real-world)", primary: "R² 0.88", primaryLabel: "Goodness of fit", secondary: "RMSE = 28.9 ml" },
+              { label: "03", title: "Yield (Ideal)", primary: "R² 0.96", primaryLabel: "Goodness of fit", secondary: "RMSE = 13.9 g" },
+              { label: "04", title: "Yield (Real-world)", primary: "R² 0.89", primaryLabel: "Goodness of fit", secondary: "RMSE = 24.1 g" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="bg-black border border-white/25 rounded-sm p-7 hover:border-purdue-gold/40 transition-colors"
+              >
+                <span className="font-heading text-[11px] font-medium tracking-[0.3em] text-purdue-gold/80">
+                  {item.label}
+                </span>
+                <h3 className="mt-4 font-heading font-medium text-base md:text-lg text-white leading-snug">
+                  {item.title}
+                </h3>
+                <p className="mt-5 font-heading text-2xl md:text-3xl font-bold text-purdue-gold">
+                  {item.primary}
+                </p>
+                <p className="mt-1 font-heading text-[10px] tracking-[0.24em] uppercase text-white/55">
+                  {item.primaryLabel}
+                </p>
+                <p className="mt-4 text-xs text-white/70 font-body leading-relaxed">
+                  {item.secondary}
+                </p>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Why it Matters */}
-        <section className="mb-20">
-          <div className="bg-gray-50 rounded-xl p-4 sm:p-8 max-w-none sm:max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6 text-center text-gray-900">
-              Why it Matters
+      {/* ── Why it Matters ─────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-black border-t border-white/25">
+        <div className="container-custom max-w-4xl">
+          <div className="mb-12 md:mb-16">
+            <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-4">
+              04 &mdash; Impact
+            </p>
+            <h2 className="font-heading font-extralight text-white text-3xl md:text-4xl lg:text-5xl tracking-[-0.02em] leading-[1]">
+              Why it <span className="font-bold text-purdue-gold">matters.</span>
             </h2>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                  <span className="text-white text-sm">✓</span>
-                </div>
-                <p className="text-gray-700">
-                  <strong>First non-destructive ear yield predictor</strong>{" "}
-                  deployable in the field.
-                </p>
-              </div>
-              <div className="flex items-start">
-                <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                  <span className="text-white text-sm">✓</span>
-                </div>
-                <p className="text-gray-700">
-                  <strong>Open dataset & code</strong> (CornDepth) to accelerate
-                  follow-up work.
-                </p>
-              </div>
-              <div className="flex items-start">
-                <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center mr-4 mt-1 flex-shrink-0">
-                  <span className="text-white text-sm">✓</span>
-                </div>
-                <p className="text-gray-700">
-                  <strong>Bridges phenotyping & on-farm decision-making</strong>{" "}
-                  for breeders and agronomists.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Resources */}
-        <section className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-6 text-gray-900">Resources</h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {project.links.map((link: ProjectLink, index: number) => {
-              // Render GitHub logo for Code link
-              const renderIcon = () => {
-                if (link.type === "Code") {
-                  return (
-                    <svg
-                      className="w-8 h-8 text-gray-700"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                  );
-                }
-                return <span className="text-3xl">{link.icon}</span>;
-              };
+          <ul className="space-y-1">
+            {[
+              {
+                bold: "First non-destructive ear yield predictor",
+                rest: " deployable in the field.",
+              },
+              {
+                bold: "Open dataset & code",
+                rest: " (CornDepth) to accelerate follow-up work.",
+              },
+              {
+                bold: "Bridges phenotyping & on-farm decision-making",
+                rest: " for breeders and agronomists.",
+              },
+            ].map((item, i) => (
+              <li
+                key={i}
+                className="flex items-baseline gap-6 py-6 border-b border-white/25"
+              >
+                <span className="font-heading text-[11px] font-medium tracking-[0.3em] text-purdue-gold/80 shrink-0">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="text-base md:text-lg text-white/85 font-body leading-relaxed">
+                  <strong className="text-white font-semibold">
+                    {item.bold}
+                  </strong>
+                  {item.rest}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
-              return (
-                <a
-                  key={index}
-                  href={link.url}
-                  className="block bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow border border-gray-200 text-center"
-                >
-                  <div className="mb-3 flex justify-center">{renderIcon()}</div>
-                  <h3 className="font-semibold text-gray-900">{link.type}</h3>
-                </a>
-              );
-            })}
+      {/* ── Resources ──────────────────────────────────────────── */}
+      <section className="py-20 md:py-28 bg-purdue-surface border-t border-white/25">
+        <div className="container-custom">
+          <div className="mb-12 md:mb-16">
+            <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-4">
+              05 &mdash; Resources
+            </p>
+            <h2 className="font-heading font-extralight text-white text-3xl md:text-4xl lg:text-5xl tracking-[-0.02em] leading-[1]">
+              Paper, code &amp; <span className="font-bold text-purdue-gold">data.</span>
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-16">
+            {project.links.map((link: ProjectLink, index: number) => (
+              <a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-black border border-white/25 rounded-sm p-7 hover:border-purdue-gold/40 transition-colors"
+              >
+                <span className="font-heading text-[11px] font-medium tracking-[0.3em] text-purdue-gold/80">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-5 font-heading font-medium text-xl text-white group-hover:text-purdue-gold transition-colors">
+                  {link.type}
+                </h3>
+                <span className="mt-4 inline-flex items-center gap-3 text-[11px] font-heading tracking-[0.24em] uppercase text-white/70 group-hover:text-purdue-gold transition-colors">
+                  Open
+                  <span className="h-px w-8 bg-white/40 group-hover:w-12 group-hover:bg-purdue-gold transition-all duration-500" />
+                </span>
+              </a>
+            ))}
           </div>
 
           {/* Citation */}
-          <div className="bg-gray-50 rounded-lg p-6 max-w-4xl mx-auto">
-            <h3 className="text-lg font-semibold mb-4 text-center">Citation</h3>
-            <pre className="text-sm text-gray-700 overflow-x-auto bg-white p-4 rounded border">
-              {
-                `@InProceedings{Cisdeli_2025_CVPR,
+          <div className="bg-black border border-white/25 rounded-sm p-6 md:p-8 max-w-4xl">
+            <p className="font-heading text-[10px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-5">
+              Citation
+            </p>
+            <pre className="text-xs md:text-sm text-white/80 overflow-x-auto font-mono leading-relaxed">
+              {`@InProceedings{Cisdeli_2025_CVPR,
 author    = {Cisdeli, Pedro and Santiago, Gustavo Nocera and Mandrini, German and Ciampitti, Ignacio},
 title     = {Maize ear sensing for on-farm yield predictions},
 booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR) Workshops},
 month     = {June},
 year      = {2025},
 pages     = {5402-5411}
-}
-`
-              }
+}`}
             </pre>
           </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="text-center py-8 border-t border-gray-200">
-          <p className="text-gray-600">
-            © 2025 Pedro Cisdeli, Gustavo Nocera Santiago, German Mandrini,
-            Ignacio Ciampitti; Purdue University - Ciampitti Lab
-          </p>
-        </footer>
-      </div>
-    </div>
+        </div>
+      </section>
+    </>
   );
 }

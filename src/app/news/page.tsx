@@ -9,76 +9,139 @@ export const metadata = {
 };
 
 export default function News() {
+  const sortedNews = [...newsData].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  );
+  const [featured, ...rest] = sortedNews;
+
   return (
-    <div className="py-16">
-      <div className="container-custom">
-        {/* Page Header */}
-        <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-4">News & Blog</h1>
-          <p className="text-lg text-purdue-secondary-gray4">
-            Latest updates, research findings, and events from the Ciampitti Lab
+    <>
+      {/* ── Page Header ─────────────────────────────────────── */}
+      <section className="pt-28 pb-20 md:pt-36 md:pb-28 border-b border-white/25">
+        <div className="container-custom fade-up">
+          <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-5">
+            From the Lab
+          </p>
+          <h1 className="font-heading font-extralight text-white text-5xl md:text-6xl lg:text-7xl tracking-[-0.025em] leading-[0.95]">
+            News <span className="font-bold text-purdue-gold">& Updates.</span>
+          </h1>
+          <p className="mt-8 max-w-2xl text-base md:text-lg text-white/80 font-body leading-relaxed">
+            Latest announcements, research findings, and events from the
+            Ciampitti Lab at Purdue University.
           </p>
         </div>
+      </section>
 
-        {/* Categories */}
-        {
-          // <div className="flex flex-wrap gap-2 mb-8 font-heading text-purdue-secondary-gray2">
-          //   <button className="px-4 py-2 rounded-full bg-purdue-black text-white text-sm font-medium">
-          //     All
-          //   </button>
-          //   <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-gray-200">
-          //     Research
-          //   </button>
-          //   <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-gray-200">
-          //     Data Analysis
-          //   </button>
-          //   <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-gray-200">
-          //     Computer Vision
-          //   </button>
-          //   <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-800 text-sm font-medium hover:bg-gray-200">
-          //     Events
-          //   </button>
-          // </div>
-        }
-        {/* Blog Posts */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-purdue-black">
-          {newsData.map((post) => (
-            <div
-              key={post.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 transition-all hover:shadow-lg"
+      {/* ── Featured Post ───────────────────────────────────── */}
+      {featured && (
+        <section className="py-20 md:py-24 bg-black border-b border-white/25">
+          <div className="container-custom">
+            <Link
+              href={`/news/${featured.slug}`}
+              className="group grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
             >
-              <div className="h-48 bg-purdue-secondary-gray2 relative">
+              <div className="relative aspect-[16/10] overflow-hidden rounded-sm bg-purdue-surface order-2 lg:order-1">
                 <Image
-                  src={`/blog/img/${post.img_file_name}`}
-                  alt={post.title}
-                  width={500}
-                  height={500}
-                  className="w-full h-full object-cover bg-purdue-black"
-                  loading="lazy"
+                  src={`/blog/img/${featured.img_file_name}`}
+                  alt={featured.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03] opacity-90 group-hover:opacity-100"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="eager"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-purdue-gold px-2 py-1 text-xs font-bold text-purdue-black rounded font-heading">
-                    {post.category}
+                  <span className="bg-purdue-gold px-2.5 py-1 text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-purdue-black rounded-sm">
+                    Featured
                   </span>
                 </div>
               </div>
-              <div className="p-6">
-                <span className="text-sm text-gray-500">{post.date}</span>
-                <h3 className="text-xl font-bold mt-1 mb-2">{post.title}</h3>
-                <p className="text-purdue-secondary-gray2 mb-4">
-                  {post.excerpt}
+
+              <div className="order-1 lg:order-2">
+                <div className="flex items-center gap-4 mb-5">
+                  <span className="font-heading text-[11px] font-medium tracking-[0.3em] text-purdue-gold/90 uppercase">
+                    {featured.category}
+                  </span>
+                  <span className="h-px w-10 bg-white/30" />
+                  <span className="font-heading text-[11px] font-medium tracking-[0.18em] text-white/65 uppercase">
+                    {featured.date}
+                  </span>
+                </div>
+                <h2 className="font-heading font-medium text-3xl md:text-4xl lg:text-5xl text-white leading-tight tracking-[-0.015em] group-hover:text-purdue-gold transition-colors">
+                  {featured.title}
+                </h2>
+                <p className="mt-6 text-base md:text-lg text-white/75 font-body leading-relaxed">
+                  {featured.excerpt}
                 </p>
-                <Link
-                  href={`/news/${post.slug}`}
-                  className="text-purdue-rush hover:underline font-medium font-heading text-bold"
-                >
-                  Read More
-                </Link>
+                <span className="mt-8 inline-flex items-center gap-3 text-xs font-heading tracking-[0.24em] uppercase text-white/85 group-hover:text-purdue-gold transition-colors">
+                  Read article
+                  <span className="h-px w-10 bg-white/40 group-hover:w-14 group-hover:bg-purdue-gold transition-all duration-500" />
+                </span>
               </div>
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* ── Recent Posts ────────────────────────────────────── */}
+      {rest.length > 0 && (
+        <section className="py-20 md:py-28 bg-purdue-surface">
+          <div className="container-custom">
+            <div className="mb-14 md:mb-20">
+              <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-4">
+                Archive
+              </p>
+              <h2 className="font-heading font-extralight text-white text-4xl md:text-5xl lg:text-6xl tracking-[-0.02em] leading-[0.95]">
+                More <span className="font-bold text-purdue-gold">Stories.</span>
+              </h2>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
+
+            <div className="grid md:grid-cols-2 gap-6 md:gap-10">
+              {rest.map((post) => (
+                <Link
+                  key={post.id}
+                  href={`/news/${post.slug}`}
+                  className="group bg-black border border-white/25 rounded-sm overflow-hidden hover:border-purdue-gold/40 transition-colors flex flex-col"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden bg-purdue-surface">
+                    <Image
+                      src={`/blog/img/${post.img_file_name}`}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03] opacity-85 group-hover:opacity-100"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-purdue-gold px-2 py-0.5 text-[9px] font-heading font-semibold uppercase tracking-[0.18em] text-purdue-black rounded-sm">
+                        {post.category}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-6 md:p-7 flex flex-col flex-1">
+                    <span className="font-heading text-[10px] font-medium tracking-[0.28em] uppercase text-purdue-gold/90 mb-3">
+                      {post.date}
+                    </span>
+                    <h3 className="font-heading font-medium text-lg md:text-xl text-white leading-snug group-hover:text-purdue-gold transition-colors">
+                      {post.title}
+                    </h3>
+                    <p className="mt-3 mb-6 text-sm text-white/75 font-body leading-relaxed line-clamp-3">
+                      {post.excerpt}
+                    </p>
+
+                    <div className="mt-auto pt-5 border-t border-white/25">
+                      <span className="inline-flex items-center gap-3 text-[11px] font-heading tracking-[0.24em] uppercase text-white/85 group-hover:text-purdue-gold transition-colors">
+                        Read
+                        <span className="h-px w-8 bg-white/40 group-hover:w-12 group-hover:bg-purdue-gold transition-all duration-500" />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </>
   );
 }

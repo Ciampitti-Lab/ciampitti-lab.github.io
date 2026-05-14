@@ -66,70 +66,71 @@ export default function PaginatedPublications({
 
   return (
     <>
-      <div className="space-y-6">
-        {currentPublications.map((publication) => (
-          <div
-            key={publication.id}
-            className="bg-white p-6 rounded-lg text-purdue-black shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
-          >
-            <h3 className="text-lg font-bold mb-2">{publication.title}</h3>
-            <p className="text-purdue-secondary-gray2 mb-2">
-              {publication.authors}
-            </p>
-            <div className="flex flex-wrap gap-x-6 text-sm">
-              <span>{publication.journal}</span>
-              <span>{publication.year}</span>
-              {publication.doi ? (
-                <a
-                  href={`https://doi.org/${publication.doi}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-purdue-gold hover:underline"
-                >
-                  <span className="text-purdue-rush">
-                    DOI: {publication.doi}
-                  </span>
-                </a>
-              ) : (
-                <a
-                  href={publication.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-purdue-gold hover:underline"
-                >
-                  <span className="text-purdue-rush">
-                    DOI coming soon - Click to view paper
-                  </span>
-                </a>
-              )}
-            </div>
-          </div>
-        ))}
+      <div className="border-t border-white/25">
+        {currentPublications.map((publication, idx) => {
+          const linkProps = publication.doi
+            ? { href: `https://doi.org/${publication.doi}`, label: publication.doi }
+            : { href: publication.url, label: "View paper" };
+          return (
+            <a
+              key={publication.id}
+              href={linkProps.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block border-b border-white/25 py-7 transition-colors hover:bg-white/[0.02]"
+            >
+              <div className="flex flex-col md:flex-row md:items-baseline gap-3 md:gap-10">
+                <span className="font-heading text-[11px] font-medium tracking-[0.3em] text-purdue-gold/80 md:w-14 md:shrink-0">
+                  {String(startIndex + idx + 1).padStart(2, "0")}
+                </span>
+
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-heading font-medium text-lg md:text-xl text-white leading-snug group-hover:text-purdue-gold transition-colors">
+                    {publication.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-white/70 font-body leading-relaxed">
+                    {publication.authors}
+                  </p>
+                </div>
+
+                <div className="md:text-right md:w-56 md:shrink-0 font-body text-xs">
+                  <p className="text-white/75">{publication.journal}</p>
+                  <p className="mt-1 text-white/55">
+                    {publication.year} &middot;{" "}
+                    <span className="text-purdue-gold/90 group-hover:text-purdue-gold transition-colors">
+                      {linkProps.label}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          );
+        })}
       </div>
 
       {totalPages > 1 && (
-        <div className="mt-6 flex flex-col items-center gap-3">
-          <div className="flex items-center gap-1.5 md:gap-2 flex-wrap justify-center">
+        <div className="mt-12 flex flex-col items-center gap-4">
+          <div className="flex items-center gap-1.5 flex-wrap justify-center">
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className="px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-md md:rounded-lg bg-white text-purdue-black font-heading font-semibold shadow-sm disabled:opacity-40 disabled:cursor-not-allowed hover:bg-purdue-gold transition-colors duration-200 border border-white"
+              className="px-4 py-2 text-xs font-heading font-medium tracking-[0.18em] uppercase text-white/80 border border-white/25 rounded-sm disabled:opacity-30 disabled:cursor-not-allowed hover:border-purdue-gold hover:text-purdue-gold transition-colors"
             >
               Previous
             </button>
 
-            <div className="flex gap-1.5 md:gap-2 flex-wrap justify-center">
+            <div className="flex gap-1.5 flex-wrap justify-center">
               {getPageNumbers().map((page, index) => (
                 <button
                   key={index}
                   onClick={() => typeof page === "number" && handlePageChange(page)}
                   disabled={page === "..."}
-                  className={`min-w-[36px] md:min-w-[40px] px-2.5 py-1.5 md:px-3 md:py-2 text-sm md:text-base rounded-md md:rounded-lg font-heading font-semibold transition-colors duration-200 ${
+                  className={`min-w-[40px] px-3 py-2 text-xs font-heading font-medium rounded-sm transition-colors ${
                     page === currentPage
-                      ? "bg-purdue-rush text-white shadow-md border border-purdue-rush"
+                      ? "bg-purdue-gold text-purdue-black border border-purdue-gold"
                       : page === "..."
-                      ? "bg-transparent text-white cursor-default border border-transparent"
-                      : "bg-white text-purdue-black shadow-sm hover:bg-purdue-gold border border-white"
+                        ? "bg-transparent text-white/40 cursor-default border border-transparent"
+                        : "text-white/70 border border-white/25 hover:border-purdue-gold hover:text-purdue-gold"
                   }`}
                 >
                   {page}
@@ -140,14 +141,14 @@ export default function PaginatedPublications({
             <button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="px-3 py-1.5 md:px-4 md:py-2 text-sm md:text-base rounded-md md:rounded-lg bg-white text-purdue-black font-heading font-semibold shadow-sm disabled:opacity-40 disabled:cursor-not-allowed hover:bg-purdue-gold transition-colors duration-200 border border-white"
+              className="px-4 py-2 text-xs font-heading font-medium tracking-[0.18em] uppercase text-white/80 border border-white/25 rounded-sm disabled:opacity-30 disabled:cursor-not-allowed hover:border-purdue-gold hover:text-purdue-gold transition-colors"
             >
               Next
             </button>
           </div>
 
-          <p className="text-xs md:text-sm text-white font-body font-medium">
-            Showing {startIndex + 1}-{Math.min(endIndex, publications.length)} of{" "}
+          <p className="text-xs text-white/50 font-body">
+            Showing {startIndex + 1}&ndash;{Math.min(endIndex, publications.length)} of{" "}
             {publications.length} publications
           </p>
         </div>

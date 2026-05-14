@@ -2,21 +2,28 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="min-h-[70vh] flex flex-col items-center justify-center py-16">
-      <div className="container-custom text-center">
-        <h1 className="text-5xl font-bold mb-6">404</h1>
-        <h2 className="text-2xl font-bold mb-4">Content Not Found</h2>
-        <p className="text-purdue-secondary-gray2 mb-8 text-xl">
-          The page or content you are looking for doesn&apos;t exist or has been
-          moved.
+    <section className="min-h-[80vh] flex items-center justify-center py-20 md:py-28 bg-black">
+      <div className="container-custom text-center fade-up">
+        <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-6">
+          Error 404
         </p>
-        <Link
-          href="/"
-          className="bg-purdue-gold hover:bg-yellow-500 text-purdue-black font-bold py-3 px-6 rounded-lg transition-colors font-heading"
-        >
-          Return to Home
-        </Link>
+        <h1 className="font-heading font-extralight text-white text-7xl md:text-9xl tracking-[-0.04em] leading-[0.9]">
+          Page <span className="font-bold text-purdue-gold">Not Found.</span>
+        </h1>
+        <p className="mt-8 text-base md:text-lg text-white/80 font-body leading-relaxed max-w-xl mx-auto">
+          The page or content you are looking for doesn&rsquo;t exist or has
+          been moved. Try heading back home.
+        </p>
+
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
+          <Link href="/" className="btn-primary">
+            Return Home
+          </Link>
+          <Link href="/research" className="btn-secondary">
+            Browse Research
+          </Link>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -14,6 +14,8 @@ const config: Config = {
         "purdue-rush": "#DAAA00",
         "purdue-field": "#DDB945",
         "purdue-black": "#000000",
+        "purdue-surface": "#0d0d0d",
+        "purdue-white": "#f5f0e8",
         "purdue-secondary": {
           gray1: "#555960",
           gray2: "#6F727B",
@@ -23,10 +25,10 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        sans: ["var(--font-plus-jakarta)"],
-        serif: ["var(--font-lora)"],
-        heading: ["var(--font-plus-jakarta)"],
-        body: ["var(--font-lora)"],
+        sans: ["var(--font-inter)"],
+        serif: ["var(--font-outfit)"],
+        heading: ["var(--font-outfit)"],
+        body: ["var(--font-inter)"],
       },
     },
   },
