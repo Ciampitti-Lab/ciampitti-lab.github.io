@@ -5,4 +5,5 @@ export interface Tool {
     url: string;
     thumbnail?: string;
     tag?: string;
+    year?: number;
 }

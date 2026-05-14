@@ -63,9 +63,16 @@ export default function Tools() {
 
                             {/* Content */}
                             <div className="p-6 flex flex-col flex-1">
-                                <h2 className="text-xl font-bold text-gray-900 mb-3 leading-tight group-hover:text-purdue-rush transition-colors">
-                                    {tool.title}
-                                </h2>
+                                <div className="flex items-start justify-between gap-3 mb-3">
+                                    <h2 className="text-xl font-bold text-gray-900 leading-tight group-hover:text-purdue-rush transition-colors">
+                                        {tool.title}
+                                    </h2>
+                                    {tool.year && (
+                                        <span className="shrink-0 text-xs font-semibold text-gray-500 bg-gray-100 px-2 py-1 rounded font-heading">
+                                            {tool.year}
+                                        </span>
+                                    )}
+                                </div>
                                 <p className="text-base text-gray-700 leading-relaxed">
                                     {tool.description}
                                 </p>
