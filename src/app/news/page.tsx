@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { newsData } from "@/lib/info_helper.server";
+import { newsData, pressData } from "@/lib/info_helper.server";
+import InTheNews from "@/app/components/InTheNews";
 
 export const metadata = {
   title: "Ciampitti Lab - News",
   description:
-    "Latest updates, blog posts and events from the Ciampitti Lab at Purdue University.",
+    "Latest news, press coverage and blog posts from the Ciampitti Lab at Purdue University.",
 };
 
 export default function News() {
@@ -23,19 +24,57 @@ export default function News() {
             From the Lab
           </p>
           <h1 className="font-heading font-extralight text-white text-5xl md:text-6xl lg:text-7xl tracking-[-0.025em] leading-[0.95]">
-            News <span className="font-bold text-purdue-gold">& Updates.</span>
+            News <span className="font-bold text-purdue-gold">& Blog.</span>
           </h1>
           <p className="mt-8 max-w-2xl text-base md:text-lg text-white/80 font-body leading-relaxed">
-            Latest announcements, research findings, and events from the
+            Press coverage, announcements, research findings, and posts from the
             Ciampitti Lab at Purdue University.
           </p>
         </div>
       </section>
 
-      {/* ── Featured Post ───────────────────────────────────── */}
-      {featured && (
-        <section className="py-20 md:py-24 bg-black border-b border-white/25">
+      {/* ── News (auto-fetched press mentions) ──────────────── */}
+      {pressData.length > 0 && (
+        <section
+          id="news"
+          className="py-20 md:py-28 bg-purdue-surface border-b border-white/25 scroll-mt-20"
+        >
           <div className="container-custom">
+            <div className="mb-12 md:mb-16">
+              <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-4">
+                In the Press
+              </p>
+              <h2 className="font-heading font-extralight text-white text-4xl md:text-5xl lg:text-6xl tracking-[-0.02em] leading-[0.95]">
+                In the <span className="font-bold text-purdue-gold">News.</span>
+              </h2>
+            </div>
+
+            <InTheNews items={pressData} itemsPerPage={6} scrollTargetId="news" />
+
+            <p className="mt-8 text-xs text-white/45 font-body">
+              Aggregated automatically from Google News. Links open the original
+              publisher.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* ── Blog · Featured Post ────────────────────────────── */}
+      {featured && (
+        <section
+          id="blog"
+          className="py-20 md:py-24 bg-black border-b border-white/25 scroll-mt-20"
+        >
+          <div className="container-custom">
+            <div className="mb-12 md:mb-16">
+              <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-4">
+                From the Lab
+              </p>
+              <h2 className="font-heading font-extralight text-white text-4xl md:text-5xl lg:text-6xl tracking-[-0.02em] leading-[0.95]">
+                From the <span className="font-bold text-purdue-gold">Blog.</span>
+              </h2>
+            </div>
+
             <Link
               href={`/news/${featured.slug}`}
               className="group grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
@@ -66,9 +105,9 @@ export default function News() {
                     {featured.date}
                   </span>
                 </div>
-                <h2 className="font-heading font-medium text-3xl md:text-4xl lg:text-5xl text-white leading-tight tracking-[-0.015em] group-hover:text-purdue-gold transition-colors">
+                <h3 className="font-heading font-medium text-3xl md:text-4xl lg:text-5xl text-white leading-tight tracking-[-0.015em] group-hover:text-purdue-gold transition-colors">
                   {featured.title}
-                </h2>
+                </h3>
                 <p className="mt-6 text-base md:text-lg text-white/75 font-body leading-relaxed">
                   {featured.excerpt}
                 </p>
@@ -82,7 +121,7 @@ export default function News() {
         </section>
       )}
 
-      {/* ── Recent Posts ────────────────────────────────────── */}
+      {/* ── Blog · Archive ──────────────────────────────────── */}
       {rest.length > 0 && (
         <section className="py-20 md:py-28 bg-purdue-surface">
           <div className="container-custom">
@@ -91,7 +130,7 @@ export default function News() {
                 Archive
               </p>
               <h2 className="font-heading font-extralight text-white text-4xl md:text-5xl lg:text-6xl tracking-[-0.02em] leading-[0.95]">
-                More <span className="font-bold text-purdue-gold">Stories.</span>
+                More <span className="font-bold text-purdue-gold">Posts.</span>
               </h2>
             </div>
 

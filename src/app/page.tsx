@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { newsData, pubData } from "@/lib/info_helper.server";
+import { newsData, pubData, pressData } from "@/lib/info_helper.server";
+import InTheNews from "@/app/components/InTheNews";
 
 export const metadata = {
   title: "Ciampitti Lab - Home",
@@ -162,18 +163,60 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Latest News ───────────────────────────────────────────── */}
-      <section className="py-24 md:py-32 bg-black">
+      {/* ── News (auto-fetched press mentions) ─────────────────────── */}
+      {pressData.length > 0 && (
+        <section className="py-24 md:py-32 bg-black">
+          <div className="container-custom">
+
+            {/* Section header */}
+            <div className="mb-12 md:mb-16 flex items-end justify-between gap-6 flex-wrap">
+              <div>
+                <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-4">
+                  02 &mdash; In the Press
+                </p>
+                <h2 className="font-heading font-extralight text-white text-4xl md:text-5xl lg:text-6xl tracking-[-0.02em] leading-[0.95]">
+                  In the <span className="font-bold text-purdue-gold">News.</span>
+                </h2>
+              </div>
+              <Link
+                href="/news#news"
+                className="hidden md:inline-flex items-center gap-4 group"
+              >
+                <span className="font-heading text-xs font-medium tracking-[0.24em] uppercase text-white/90 group-hover:text-purdue-gold transition-colors">
+                  View All
+                </span>
+                <span className="h-px w-10 bg-white/50 group-hover:w-16 group-hover:bg-purdue-gold transition-all duration-500" />
+              </Link>
+            </div>
+
+            <InTheNews items={pressData} limit={5} />
+
+            {/* Mobile-only view-all */}
+            <Link
+              href="/news#news"
+              className="md:hidden mt-10 inline-flex items-center gap-4 group"
+            >
+              <span className="font-heading text-xs font-medium tracking-[0.24em] uppercase text-white/90 group-hover:text-purdue-gold transition-colors">
+                View All News
+              </span>
+              <span className="h-px w-10 bg-white/50 group-hover:w-16 group-hover:bg-purdue-gold transition-all duration-500" />
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* ── Blog (hand-written posts) ──────────────────────────────── */}
+      <section className="py-24 md:py-32 bg-purdue-surface">
         <div className="container-custom">
 
           {/* Section header */}
           <div className="mb-14 md:mb-20 flex items-end justify-between gap-6 flex-wrap">
             <div>
               <p className="font-heading text-[10px] md:text-[11px] font-medium uppercase tracking-[0.4em] text-purdue-gold/90 mb-4">
-                02 &mdash; From the Lab
+                03 &mdash; From the Lab
               </p>
               <h2 className="font-heading font-extralight text-white text-4xl md:text-5xl lg:text-6xl tracking-[-0.02em] leading-[0.95]">
-                Latest <span className="font-bold text-purdue-gold">News.</span>
+                From the <span className="font-bold text-purdue-gold">Blog.</span>
               </h2>
             </div>
             <Link

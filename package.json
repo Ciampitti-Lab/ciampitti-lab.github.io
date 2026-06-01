@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "deploy": "next build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin gh-pages",
-    "fetch-publications": "node src/scripts/fetch-publications.js"
+    "fetch-publications": "node src/scripts/fetch-publications.js",
+    "fetch-news": "node src/scripts/fetch-news.js"
   },
   "dependencies": {
     "@types/react-syntax-highlighter": "^15.5.13",

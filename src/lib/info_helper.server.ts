@@ -58,7 +58,16 @@ interface Publication {
   url: string;
   doi: string;
 }
+// Interface for auto-fetched press mentions (Google News RSS)
+interface PressMention {
+  id: string;
+  title: string;
+  source: string;
+  date: string;
+  url: string;
+}
 /** Constants are evaluated once during the build / first server start */
 export const teamData = readSheet<TeamMember>('team');
 export const newsData = readSheet<NewsPost>('news');
 export const pubData = readJSON<Publication>('publications.json');
+export const pressData = readJSON<PressMention>('news_auto.json');

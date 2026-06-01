@@ -8,9 +8,9 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-  # Trigger run after updating publication files
+  # Trigger run after updating publication or news files
   workflow_run:
-    workflows: ["Update Publications"]
+    workflows: ["Update Publications", "Update News"]
     types:
       - completed
     branches: ["main"]
