@@ -117,6 +117,37 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           color: white !important;
         }
 
+        /* Side-by-side figures: <div class="figure-grid"> ...images... </div> */
+        /* Justified row: each figure carries flex-grow = its aspect ratio
+           (set via |ratio=WxH), so all images render at the same height. */
+        .figure-grid {
+          display: flex;
+          gap: 1.25rem;
+          align-items: flex-start;
+          margin: 2.5rem 0;
+        }
+        .figure-grid > * {
+          display: contents; /* unwrap the paragraph wrappers around each image */
+        }
+        .figure-grid .md-figure {
+          display: block !important;
+          width: auto !important;
+          min-width: 0;
+          margin: 0 !important;
+        }
+        .figure-grid .md-figure figcaption {
+          display: block !important;
+        }
+        @media (max-width: 639px) {
+          .figure-grid {
+            flex-direction: column;
+          }
+          .figure-grid .md-figure {
+            flex: none !important;
+            width: 100% !important;
+          }
+        }
+
         /* Video styling */
         video {
           background-color: #000;
@@ -153,6 +184,7 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
                         let width: string | undefined;
                         let height: string | undefined;
                         let align: string = "center"; // default alignment
+                        let ratio: number | undefined; // width / height, used by .figure-grid rows
 
                         if (alt.includes("|")) {
                             const parts = alt.split("|");
@@ -166,6 +198,10 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
                                     height = attr.trim().replace("height=", "").trim();
                                 } else if (attr.trim().startsWith("align=")) {
                                     align = attr.trim().replace("align=", "").trim();
+                                } else if (attr.trim().startsWith("ratio=")) {
+                                    /* ratio=WxH (pixel size) -> lets side-by-side figures share one height */
+                                    const [w, h] = attr.trim().replace("ratio=", "").split("x").map(Number);
+                                    if (w > 0 && h > 0) ratio = w / h;
                                 }
                             }
 
@@ -209,34 +245,53 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
                             );
                         }
 
-                        /* Generate flexbox justification based on alignment */
-                        const justifyContent =
-                            align === "left" ? "flex-start" :
-                                align === "right" ? "flex-end" :
-                                    "center";
+                        /* Figure box: sized by `width` when given, otherwise
+                           shrink-wraps the image (display: table) so the caption
+                           never grows wider than the image itself. */
+                        const marginX =
+                            align === "left" ? "mr-auto" :
+                                align === "right" ? "ml-auto" :
+                                    "mx-auto";
+
+                        /* Highlight a leading "Figure N." label in captions */
+                        const labelMatch = alt.match(/^((?:Figure|Fig\.)\s*\d+[a-z]?\.)\s*([\s\S]*)$/);
 
                         return (
-                            <div className="my-8 w-full flex" style={{ justifyContent }}>
-                                <div className={`${width ? "" : "max-w-3xl"}`}>
-                                    <img
-                                        src={imgSrc}
-                                        alt={alt}
-                                        className="rounded-md w-full h-auto"
-                                        style={{
-                                            width: width || "auto",
-                                            height: height || "auto",
-                                            maxWidth: "100%"
-                                        }}
-                                        loading="lazy"
-                                        {...rest}
-                                    />
-                                    {alt && (
-                                        <div className="text-sm text-gray-500 mt-2 text-center italic">
-                                            {alt}
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
+                            <figure
+                                className={`md-figure my-10 ${marginX} ${width ? "block" : "table"}`}
+                                style={{
+                                    width: width || undefined,
+                                    maxWidth: "100%",
+                                    /* In a .figure-grid row, grow in proportion to aspect
+                                       ratio so every image ends up the same height. */
+                                    ...(ratio ? { flex: `${ratio} 1 0%` } : {}),
+                                }}
+                            >
+                                <img
+                                    src={imgSrc}
+                                    alt={alt}
+                                    className="rounded-sm block w-full h-auto bg-white/5"
+                                    style={{ height: height || "auto" }}
+                                    loading="lazy"
+                                    {...rest}
+                                />
+                                {alt && (
+                                    <figcaption
+                                        className={`mt-3 text-[13px] leading-relaxed text-white/60 font-body ${width ? "" : "table-caption caption-bottom"}`}
+                                    >
+                                        {labelMatch ? (
+                                            <>
+                                                <span className="font-heading font-semibold text-purdue-gold/90 mr-1">
+                                                    {labelMatch[1]}
+                                                </span>
+                                                {labelMatch[2]}
+                                            </>
+                                        ) : (
+                                            alt
+                                        )}
+                                    </figcaption>
+                                )}
+                            </figure>
                         );
                     },
 

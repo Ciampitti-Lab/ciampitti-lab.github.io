@@ -88,11 +88,6 @@ export default function News() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   loading="eager"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-purdue-gold px-2.5 py-1 text-[10px] font-heading font-semibold uppercase tracking-[0.18em] text-purdue-black rounded-sm">
-                    Featured
-                  </span>
-                </div>
               </div>
 
               <div className="order-1 lg:order-2">
@@ -150,11 +145,6 @@ export default function News() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       loading="lazy"
                     />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-purdue-gold px-2 py-0.5 text-[9px] font-heading font-semibold uppercase tracking-[0.18em] text-purdue-black rounded-sm">
-                        {post.category}
-                      </span>
-                    </div>
                   </div>
 
                   <div className="p-6 md:p-7 flex flex-col flex-1">

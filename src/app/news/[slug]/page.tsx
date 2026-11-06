@@ -79,12 +79,31 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
 
   return (
     <>
-      {/* ── Article Header ─────────────────────────────────────── */}
-      <section className="pt-28 pb-12 md:pt-36 md:pb-16 border-b border-white/25">
-        <div className="container-custom max-w-4xl fade-up">
+      {/* ── Article Header (full-bleed hero) ───────────────────── */}
+      <section className="relative isolate overflow-hidden border-b border-white/25 min-h-[72vh] md:min-h-[80vh] flex items-end">
+        {post.img_file_name && (
+          <>
+            <Image
+              src={`/blog/img/${post.img_file_name}`}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover -z-20"
+            />
+            {/* Scrims so white text stays legible on any photo, even bright skies:
+                top fade for the fixed nav, a bottom fade under the title block,
+                and a left fade behind the left-aligned text. The top-right of
+                the photo stays mostly untouched. */}
+            <div className="absolute inset-x-0 top-0 h-40 -z-10 bg-gradient-to-b from-black/60 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-[85%] -z-10 bg-[linear-gradient(to_top,rgba(0,0,0,1)_0%,rgba(0,0,0,0.85)_30%,rgba(0,0,0,0.45)_65%,rgba(0,0,0,0)_100%)]" />
+            <div className="absolute inset-y-0 left-0 w-full md:w-[75%] -z-10 bg-[linear-gradient(to_right,rgba(0,0,0,0.65)_0%,rgba(0,0,0,0.35)_55%,rgba(0,0,0,0)_100%)]" />
+          </>
+        )}
+        <div className="container-custom max-w-4xl w-full pt-40 pb-14 md:pb-20 fade-up [text-shadow:0_1px_3px_rgba(0,0,0,0.7)]">
           <Link
             href="/news"
-            className="inline-flex items-center gap-3 text-xs font-heading tracking-[0.24em] uppercase text-white/70 hover:text-purdue-gold transition-colors mb-10 group"
+            className="inline-flex items-center gap-3 text-xs font-heading tracking-[0.24em] uppercase text-white/85 hover:text-purdue-gold transition-colors mb-10 group"
           >
             <span className="h-px w-8 bg-white/40 group-hover:w-12 group-hover:bg-purdue-gold transition-all duration-500" />
             Back to News
@@ -95,17 +114,17 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
               {post.category}
             </span>
             <span className="h-px w-8 bg-white/30" />
-            <span className="font-heading text-[11px] font-medium tracking-[0.24em] uppercase text-white/65">
+            <span className="font-heading text-[11px] font-medium tracking-[0.24em] uppercase text-white/85">
               {post.date}
             </span>
           </div>
 
-          <h1 className="font-heading font-extralight text-white text-4xl md:text-5xl lg:text-6xl tracking-[-0.02em] leading-[1.05]">
+          <h1 className="font-heading font-light text-white text-4xl md:text-5xl lg:text-6xl tracking-[-0.02em] leading-[1.05] [text-shadow:0_1px_3px_rgba(0,0,0,0.6),0_2px_28px_rgba(0,0,0,0.65)]">
             {post.title}
           </h1>
 
           {post.excerpt && (
-            <p className="mt-8 text-base md:text-lg text-white/80 font-body leading-relaxed max-w-2xl">
+            <p className="mt-8 text-base md:text-lg text-white/90 font-body leading-relaxed max-w-2xl">
               {post.excerpt}
             </p>
           )}
@@ -115,19 +134,6 @@ export default async function BlogPostPage(props: BlogPostPageProps) {
       {/* ── Article Body ───────────────────────────────────────── */}
       <article className="py-16 md:py-24 bg-black">
         <div className="container-custom max-w-3xl">
-          {post.img_file_name && (
-            <div className="relative aspect-[16/9] mb-12 md:mb-16 overflow-hidden rounded-sm bg-purdue-surface">
-              <Image
-                src={`/blog/img/${post.img_file_name}`}
-                alt={post.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 768px"
-                priority
-              />
-            </div>
-          )}
-
           <div className="prose prose-lg max-w-none text-white/85 font-body">
             <MarkdownContent content={mdContent} />
           </div>
